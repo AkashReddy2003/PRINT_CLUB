@@ -50,25 +50,18 @@ export default function HomePage() {
   
   return (
     <div id='main'>
-      <section id='navbar' style={{backgroundColor:"#FFF8E8",width: "100vw",minHeight:85}}>
-       
-          <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center',marginLeft:30,marginRight: 20,paddingTop:20}}>
-          <a href='#' style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Assistance</a>
-          <a href='#' style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Faq</a>
-          <a href='#' style={{width: "14%",fontSize: 18,}} className='poppins-medium'>About</a>
-          <a href='#' style={{width: "16%",fontSize: 35,}} className='protest-guerrilla-regular'>PRINT CLUB</a>
-          <a href='#' style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Collections</a>
-          <a href='#' style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Stores</a>
-          <a href='#' style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Login</a>
-          </div>
-      </section>
+      
       <section style={{display:"flex", justifyContent:"center",width: "100vw",height:"105vh",backgroundColor:"#FFF8E8"}}>
         <p style={{fontSize: 200,}} className='protest-guerrilla-regular'>PRINT CLUB</p>
-        <img src={rs} style={{position:"absolute",top:200,height: 600,}}/>
-        <img src={ts} style={{position:"absolute",top:250,left:300,height: 550,}}/>
-        <img src={bb} style={{position:"absolute",top:250,left:680,height: 550,}}/>
-        <img src={js} style={{position:"absolute",top:250,left:240,height: 550,}}/>
-        <img src={rag} style={{position:"absolute",top:250,right:180,height: 530,}}/>
+        <div style={{position:"absolute",display:"flex",flexDirection:"row",top:'30vh',justifyContent:"center"}}>
+        
+        <img src={ts} style={{height: 550,}}/>
+        <img src={bb} style={{height: 550,}}/>
+        <img src={rs} style={{height: 600,}}/>
+        <img src={js} style={{height: 550,}}/>
+        <img src={rag} style={{height: 530,}}/>
+        </div>
+        
         <p style={{fontSize: 60,position: "absolute",color:"grey",bottom:20,left:160}} className='protest-guerrilla-regular'>SINCE 2024</p>
       </section>
       <section>
@@ -308,29 +301,7 @@ export default function HomePage() {
 
         </Grid>
       </section>
-      <section style={{width:"100vw",backgroundColor:"#FFF8E8",display:"flex",justifyContent:"center",flexDirection:"column"}}>
-        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",padding:20}}>
-        <p className='poppins-medium'>STAY UPDATED</p>
-        <div>
-          <p className='poppins-medium' style={{width:'30vw',textAlign:"left",fontSize:12}}>THE FIRST RULE OF PRINT CLUB: YOU DON’T MISS OUT. ENTER YOUR EMAIL FOR EXCLUSIVE OFFERS AND NEW DESIGNS STRAIGHT TO YOUR INBOX.</p>
-          <div style={{display:"flex",width:"30vw",flexDirection:"row",alignItems:"center"}}>
-          <input style={{width: '40vw',borderBottomWidth:2,borderColor:"black",backgroundColor:"#FFF8E8",marginTop:20}} placeholder='ENTER YOUR EMAIL'/>
-          <a href='#'><ArrowOutwardIcon/></a>
-          </div>
-         
-        </div>
-        </div>
-      
-      <p style={{fontSize: 150,alignSelf:"center"}} className='protest-guerrilla-regular'>PRINT CLUB</p>
-      <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",padding:20}}>
-        <p className='poppins-medium'>© PRINT CLUB 2024</p>
-        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-        <a href='#' className='poppins-medium' style={{marginRight: 20,}}>PRIVACY POLICY <ArrowOutwardIcon/></a>
-        <a href="#" className='poppins-medium'>TERMS & CONDITIONS <ArrowOutwardIcon/></a>
-         
-        </div>
-        </div>
-      </section>
+    
       
       
       
