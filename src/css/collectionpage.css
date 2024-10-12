@@ -1,0 +1,26 @@
+.tile{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    height: 10;
+    overflow: hidden;
+}
+
+.tile:hover img{
+    visibility: hidden;
+}
+
+.tile:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.tile:hover h1{
+    visibility: visible;
+}
+
+.tile h1{
+    position: absolute;
+    visibility: hidden;
+    
+}

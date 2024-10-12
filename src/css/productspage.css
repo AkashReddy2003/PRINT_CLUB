@@ -1,0 +1,12 @@
+
+.prodimg{
+    transition: transform .2s;
+}
+
+.prodname:hover{
+    text-decoration: underline;
+}
+
+.prodimg:hover{
+    transform: scale(1.2);
+}

@@ -6,13 +6,24 @@ import HomePage from './pages/HomePage'
 import Example from './pages/HomePage'
 import Ap from './pages/AnimText'
 import Main from './pages/Main'
-
+import {Routes, Route } from 'react-router-dom';
+import { MyContextProvider } from './context/GlobalContext'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    
-      <Main/>
+    <MyContextProvider>
+    <Routes>
+      
+      <Route path='/' element={<Main/>}/>
+      <Route path='/:nav' element={<Main/>}/>
+      <Route path='/:nav/:store/:collection/' element={<Main/>}/>
+      <Route path='/:nav/:productid' element={<Main/>}/>
+      
+      
+    </Routes>
+    </MyContextProvider>
+      
     
   )
 }
