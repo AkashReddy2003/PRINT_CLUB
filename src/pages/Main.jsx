@@ -2,16 +2,69 @@ import React, { useEffect, useState } from 'react'
 import HomePage from './HomePage'
 import StoresPage from './StoresPage'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import MenuIcon from '@mui/icons-material/Menu';
 import CollectionPage from './CollectionPage';
 import { useNavigate, useParams } from 'react-router-dom';
 import Products from './Products';
 import ProductPage from './ProductPage';
+import { Box, Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 export default function Main() {
   const {nav}=useParams();
   const navigate=useNavigate();
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+  const DrawerList = (
+    <Box sx={{ width: 250 ,backgroundColor: "#FFF8E8"}}  onClick={toggleDrawer(false)}>
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+
+
 
   return (
     <div>
+      <section id="navbar1 " style={{width: "100vw", display:"flex",flexDirection:"row",justifyContent:"space-between",backgroundColor: "#FFF8E8",maxHeight: "100vh",}}>
+        <div style={{marginLeft: 10,}}>
+        <Button onClick={toggleDrawer(true)}><MenuIcon style={{fontSize: 35,}}/></Button>
+      <Drawer open={open} onClose={toggleDrawer(false)} anchor='left'>
+        {DrawerList}
+      </Drawer>
+        </div>
+        <div style={{marginRight: 20,}}>
+        <a style={{fontSize: 35,}} className='protest-guerrilla-regular' onClick={()=>navigate("/")}>PRINT CLUB</a>
+        </div>
+    
+
+
+      </section>
       <section id='navbar' style={{backgroundColor:"#FFF8E8",width: "100vw",minHeight:85}}>
        
        <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center',marginLeft:30,marginRight: 20,paddingTop:20}}>
