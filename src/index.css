@@ -6,6 +6,7 @@
 }
 
 
+
   ::-webkit-scrollbar {display:none;}
   .poppins-thin {
     font-family: "Poppins", sans-serif;
@@ -160,3 +161,81 @@ input:focus{
 @tailwind components;
 @tailwind utilities;
 
+@media screen and (max-width:768px) {
+  #mobnav{
+    display: flex;
+  }
+  .head{
+    height: 90vh;
+  }
+  .headtitle{
+    font-size: 150px;
+    line-height: 0.8;
+    margin-top: 100px;
+  }
+
+  .headimg{
+    display: none;
+  }
+
+  .headsubtitle{
+    font-size: 50px;
+    line-height: 0.8;
+    position: absolute;
+    color: grey;
+    width: 150px;
+    right: 30px;
+    bottom: 100px;
+
+  }
+
+  .mobheadimg{
+    display: block;
+    height: 500px;
+    position: absolute;
+    top: 300px;
+  }
+
+  .parallax{
+    height: 50px;
+    span{
+      font-size: 50px;
+    }
+  }
+
+
+  #navbar{
+    display: none;
+  }
+}
+@media screen and (min-width:769px) {
+  #navbar{
+    display: block;
+  }
+  .head{
+    height: 105vh;
+  }
+  .headtitle{
+    font-size: 200px;
+  }
+
+  .headimg{
+    display: flex;
+  }
+  .mobheadimg{
+   display: none; 
+  }
+
+  .headsubtitle{
+    font-size: 60px;
+    position: absolute;
+    color: grey;
+    left: 160px;
+    bottom: 20px;
+  }
+
+  #mobnav{
+    display: none;
+  }
+  
+}

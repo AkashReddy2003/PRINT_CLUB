@@ -16,55 +16,68 @@ export default function Main() {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
   const DrawerList = (
-    <Box sx={{ width: 250 ,backgroundColor: "#FFF8E8"}}  onClick={toggleDrawer(false)}>
+    <Box sx={{ width: "100vw",backgroundColor: "#FFF8E8",height:"100%" }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        
+          <ListItem  disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                
-              </ListItemIcon>
-              <ListItemText primary={text} />
+             
+              <ListItemText  ><a style={{width: "16%",fontSize: 35,}} className='protest-guerrilla-regular' onClick={()=>navigate("/")}>PRINT CLUB</a></ListItemText>
             </ListItemButton>
           </ListItem>
-        ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+      <ListItem  disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                
-              </ListItemIcon>
-              <ListItemText primary={text} />
+             
+              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/store")}>Stores</a></ListItemText>
+             
             </ListItemButton>
           </ListItem>
-        ))}
+          <ListItem  disablePadding>
+            <ListItemButton>
+             
+             
+              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/collection")}>Collections</a></ListItemText>
+           
+            </ListItemButton>
+          </ListItem>
+          <ListItem  disablePadding>
+            <ListItemButton>
+             
+            
+              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Cart</a></ListItemText>
+             
+            </ListItemButton>
+          </ListItem>
+          <ListItem  disablePadding>
+            <ListItemButton>
+             
+             
+              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Track Order</a></ListItemText>
+            </ListItemButton>
+          </ListItem>
+        
       </List>
     </Box>
   );
 
 
-
-
   return (
-    <div>
-      <section id="navbar1 " style={{width: "100vw", display:"flex",flexDirection:"row",justifyContent:"space-between",backgroundColor: "#FFF8E8",maxHeight: "100vh",}}>
-        <div style={{marginLeft: 10,}}>
-        <Button onClick={toggleDrawer(true)}><MenuIcon style={{fontSize: 35,}}/></Button>
-      <Drawer open={open} onClose={toggleDrawer(false)} anchor='left'>
+    <div >
+     <section id='mobnav' style={{flexDirection:"row",justifyContent:"space-between",width: "100vw",backgroundColor: "#FFF8E8",}}>
+     
+      <Button onClick={toggleDrawer(true)}><MenuIcon style={{fontSize: 35,color:"black",alignSelf:"baseline"}}/></Button>
+      <Drawer open={open} onClose={toggleDrawer(false)} style={{height: "100vh",}}>
         {DrawerList}
       </Drawer>
-        </div>
-        <div style={{marginRight: 20,}}>
-        <a style={{fontSize: 35,}} className='protest-guerrilla-regular' onClick={()=>navigate("/")}>PRINT CLUB</a>
-        </div>
-    
-
-
-      </section>
+     
+     
+      <a style={{fontSize: 35,marginRight:10}} className='protest-guerrilla-regular' onClick={()=>navigate("/")}>PRINT CLUB</a>
+     </section>
       <section id='navbar' style={{backgroundColor:"#FFF8E8",width: "100vw",minHeight:85}}>
        
        <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center',marginLeft:30,marginRight: 20,paddingTop:20}}>
@@ -75,11 +88,14 @@ export default function Main() {
        <a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Track Order</a>
        </div>
    </section>
+   <div style={{visibility:open?"hidden":"visible"}}>
    {!nav&&<HomePage/>}
    {nav=="store"&&<StoresPage/>}
    {nav=="collection"&&<CollectionPage/>}
    {nav=="product"&&<Products/>}
    {nav=="productpage"&&<ProductPage/>}
+   </div>
+   
    
    <section style={{width:"100vw",backgroundColor:"#FFF8E8",display:"flex",justifyContent:"center",flexDirection:"column"}}>
         <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",padding:20}}>

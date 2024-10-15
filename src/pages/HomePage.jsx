@@ -51,9 +51,9 @@ export default function HomePage() {
   return (
     <div id='main'>
       
-      <section style={{display:"flex", justifyContent:"center",width: "100vw",height:"105vh",backgroundColor:"#FFF8E8"}}>
-        <p style={{fontSize: 200,}} className='protest-guerrilla-regular'>PRINT CLUB</p>
-        <div style={{position:"absolute",display:"flex",flexDirection:"row",top:'30vh',justifyContent:"center"}}>
+      <section className='head' style={{display:"flex", justifyContent:"center",width: "100vw",backgroundColor:"#FFF8E8"}}>
+        <p className='protest-guerrilla-regular headtitle'  >PRINT CLUB</p>
+        <div className='headimg' style={{position:"absolute",flexDirection:"row",top:'30vh',justifyContent:"center"}}>
         
         <img src={ts} style={{height: 550,}}/>
         <img src={bb} style={{height: 550,}}/>
@@ -61,8 +61,9 @@ export default function HomePage() {
         <img src={js} style={{height: 550,}}/>
         <img src={rag} style={{height: 530,}}/>
         </div>
+        <img className='mobheadimg' src={bb} />
         
-        <p style={{fontSize: 60,position: "absolute",color:"grey",bottom:20,left:160}} className='protest-guerrilla-regular'>SINCE 2024</p>
+        <p   className='protest-guerrilla-regular headsubtitle'>SINCE 2024</p>
       </section>
       <section>
       <AnimText>PRINT CLUB #</AnimText>
