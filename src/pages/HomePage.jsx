@@ -70,9 +70,10 @@ export default function HomePage() {
       </section>
       <section className='stores' style={{display:"flex", justifyContent:"center",width: "100vw",backgroundColor:"#FFF8E8",minHeight:"110vh"}}>
         <div className='poster' >
-        <p style={{fontSize: 100,}} className='protest-guerrilla-regular'>Stores</p>
-          <img className='block' src={pos} style={{height:600,position:"absolute",left:400}}/>
-          <p style={{fontSize: 70,position: "absolute",left:112,paddingTop:20,width: 800,textAlign:"left",color:"black"}} className='protest-guerrilla-regular block'>Elevate <br/>Your Spac<span style={{color:"#FFF8E8"}}>e with </span><br/> Stunning <span style={{color:"#FFF8E8"}}>Posters</span></p>
+        <p  className='protest-guerrilla-regular sectiontitle'>Stores</p>
+          <img className='block sectionimg' src={pos} />
+          <p style={{position: "absolute",left:112,paddingTop:20,width: 800,textAlign:"left",color:"black"}} className='protest-guerrilla-regular block sectionsubtitlelap'>Elevate <br/>Your Spac<span style={{color:"#FFF8E8"}}>e with </span><br/> Stunning <span style={{color:"#FFF8E8"}}>Posters</span></p>
+          <p style={{position: "absolute",left:0,paddingTop:20,width: 800,textAlign:"left",color:"black",}} className='protest-guerrilla-regular block sectionsubtitlemob'>Elevate <br/>Your Space with <br/> Stunning Posters</p>
           <div className='block' style={{position:"absolute",right: 100,paddingTop:150}}>
           <p style={{fontSize: 40,left:120,width: 500,textAlign:"left",color:"black"}} className='protest-guerrilla-regular'>Poster Store</p> 
           <p className='poppins-medium' style={{width: 500,textAlign:"left",marginBottom:50}}>Transform any room with our exclusive collection of posters. From modern art to inspirational quotes, our designs help you express your style and make your walls come alive. Printed on premium-quality paper for a lasting impression.</p>
@@ -127,7 +128,7 @@ export default function HomePage() {
         
       </section>
       <section style={{justifyContent:"center",alignItems:"center",width:"100vw",backgroundColor:"#FFF8E8",paddingBottom: 100,}}>
-      <p style={{fontSize: 100,}} className='protest-guerrilla-regular'>Our Products</p>
+      <p style={{fontSize: 100,}} className='protest-guerrilla-regular sectiontitle'>Our Products</p>
         <Grid container spacing={5} style={{alignSelf: 'center',paddingLeft: 100,paddingRight: 100,justifyContent:"center",alignItems:"center"}}>
           <Grid className="block" size={4}>
             <div style={{height:350,backgroundColor:"#FFF8E8",justifyContent:"center",alignItems:"center",display:"flex",borderColor: "black",borderWidth: 2,flexDirection:"column"}}>

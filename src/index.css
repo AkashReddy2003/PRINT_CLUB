@@ -203,6 +203,25 @@ input:focus{
     }
   }
 
+  .sectiontitle{
+    font-size: 50px;
+  }
+
+  .sectionsubtitlemob{
+    font-size: 40px;
+    display: block;
+    margin-left: 20px;
+  }
+
+  .sectionsubtitlelap{
+    display: none;
+  }
+
+  .sectionimg{
+    height: 400px;
+    
+  }
+
 
   #navbar{
     display: none;
@@ -232,6 +251,28 @@ input:focus{
     color: grey;
     left: 160px;
     bottom: 20px;
+  }
+
+  .sectiontitle{
+    font-size: 100px;
+  }
+  .sectionsubtitle{
+    font-size: 70px;
+  }
+
+  .sectionimg{
+    height: 600px;
+    position: absolute;
+    left: 400px;
+  }
+
+  .sectionsubtitlemob{
+    display: none;
+  }
+
+  .sectionsubtitlelap{
+    font-size: 70px;
+    display: block;
   }
 
   #mobnav{
