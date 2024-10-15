@@ -73,10 +73,22 @@ export default function HomePage() {
         <p  className='protest-guerrilla-regular sectiontitle'>Stores</p>
           <img className='block sectionimg' src={pos} />
           <p style={{position: "absolute",left:112,paddingTop:20,width: 800,textAlign:"left",color:"black"}} className='protest-guerrilla-regular block sectionsubtitlelap'>Elevate <br/>Your Spac<span style={{color:"#FFF8E8"}}>e with </span><br/> Stunning <span style={{color:"#FFF8E8"}}>Posters</span></p>
-          <p style={{position: "absolute",left:0,paddingTop:20,width: 800,textAlign:"left",color:"black",}} className='protest-guerrilla-regular block sectionsubtitlemob'>Elevate <br/>Your Space with <br/> Stunning Posters</p>
-          <div className='block' style={{position:"absolute",right: 100,paddingTop:150}}>
+          <p style={{position: "absolute",left:0,paddingTop:20,width: 800,textAlign:"left",color:"black",lineHeight:1.2}} className='protest-guerrilla-regular block sectionsubtitlemob'>Elevate <br/>Your Space with <br/> Stunning Posters</p>
+          <div className='block sectiondesclap' style={{position:"absolute",right: 100,paddingTop:150}}>
           <p style={{fontSize: 40,left:120,width: 500,textAlign:"left",color:"black"}} className='protest-guerrilla-regular'>Poster Store</p> 
           <p className='poppins-medium' style={{width: 500,textAlign:"left",marginBottom:50}}>Transform any room with our exclusive collection of posters. From modern art to inspirational quotes, our designs help you express your style and make your walls come alive. Printed on premium-quality paper for a lasting impression.</p>
+          <div  style={{width:500,height:2,backgroundColor:"black",marginBottom:50}}></div>
+          <button className='poppins-medium' style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
+
+          }}>Shop now 
+          <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>
+</button>
+          </div>
+          <div className='block sectiondescmob' style={{position:"absolute",left:20,width: "90vw",paddingTop:180}}>
+          <p style={{fontSize: 40,left:120,textAlign:"left",color:"black"}} className='protest-guerrilla-regular'>Poster Store</p> 
+          <p className='poppins-medium' style={{textAlign:"left",marginBottom:50}}>Transform any room with our exclusive collection of posters. From modern art to inspirational quotes, our designs help you express your style and make your walls come alive. Printed on premium-quality paper for a lasting impression.</p>
           <div  style={{width:500,height:2,backgroundColor:"black",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
 

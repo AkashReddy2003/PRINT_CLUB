@@ -166,10 +166,11 @@ input:focus{
     display: flex;
   }
   .head{
-    height: 90vh;
+    height: 750px;
   }
   .headtitle{
-    font-size: 150px;
+    font-size: 130px;
+    width: 90vw;
     line-height: 0.8;
     margin-top: 100px;
   }
@@ -216,10 +217,22 @@ input:focus{
   .sectionsubtitlelap{
     display: none;
   }
+  
 
   .sectionimg{
     height: 400px;
+    align-self: center;
     
+  }
+
+  .sectiondesclap{
+    display: none;
+  }
+  .sectiondescmob{
+    display: block;
+  }
+  .stores{
+    height: 1100px;
   }
 
 
@@ -273,6 +286,12 @@ input:focus{
   .sectionsubtitlelap{
     font-size: 70px;
     display: block;
+  }
+  .sectiondesclap{
+    display: block;
+  }
+  .sectiondescmob{
+    display: none;
   }
 
   #mobnav{
