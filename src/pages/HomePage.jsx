@@ -89,7 +89,7 @@ export default function HomePage() {
           <div className='block sectiondescmob' style={{position:"absolute",left:20,width: "90vw",paddingTop:180}}>
           <p style={{fontSize: 40,left:120,textAlign:"left",color:"black"}} className='protest-guerrilla-regular'>Poster Store</p> 
           <p className='poppins-medium' style={{textAlign:"left",marginBottom:50}}>Transform any room with our exclusive collection of posters. From modern art to inspirational quotes, our designs help you express your style and make your walls come alive. Printed on premium-quality paper for a lasting impression.</p>
-          <div  style={{width:500,height:2,backgroundColor:"black",marginBottom:50}}></div>
+          <div  style={{height:2,backgroundColor:"black",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
 
           }}>Shop now 
@@ -103,18 +103,38 @@ export default function HomePage() {
 
         </div>
       </section>
-      <section className='stores' style={{display:"flex", justifyContent:"center",width: "100vw",backgroundColor:"black",minHeight:"110vh",paddingTop:100,position: "relative",}}>
+
+
+
+
+
+
+      <section className=' stickerstores' style={{display:"flex", justifyContent:"center",width: "100vw",backgroundColor:"black",minHeight:"110vh",paddingTop:100,position: "relative"}}>
         <div className='poster' >
         <div style={{position: "absolute",right:0,}}>
        
-        <p style={{fontSize: 70,paddingTop:20,width: 700,textAlign:"left",color:"#FFF8E8"}} className='protest-guerrilla-regular block'>Add  <br/>Personality<span style={{color:"#FFF8E8"}}> </span><br/> with Custom Stickers <span style={{color:"#FFF8E8"}}></span></p>
+        <p style={{fontSize: 70,paddingTop:20,width: 700,textAlign:"left",color:"#FFF8E8"}} className='protest-guerrilla-regular block sectionsubtitlelap'>Add  <br/>Personality<span style={{color:"#FFF8E8"}}> </span><br/> with Custom Stickers <span style={{color:"#FFF8E8"}}></span></p>
+       
 
         </div>
+        <p style={{position: "absolute",left:0,paddingTop:180,width: 800,textAlign:"left",color:"#FFF8E8",lineHeight:1.2,}} className='protest-guerrilla-regular block sectionsubtitlemob'>Add <br/>Personality with <br/> Custom Stickers</p>
           
-          <div className='block' style={{position:"absolute",left: 100,paddingTop:150}}>
+          <div className='block sectiondesclap' style={{position:"absolute",left: 100,paddingTop:150}}>
           <p style={{fontSize: 40,left:120,width: 500,textAlign:"left",color:"#FFF8E8"}} className='protest-guerrilla-regular'>Sticker Store</p> 
           <p className='poppins-medium' style={{width: 500,textAlign:"left",marginBottom:50,color:"#FFF8E8"}}>Explore a wide range of fun, creative, and high-quality stickers that let you express yourself wherever you go. Perfect for laptops, notebooks, water bottles, and more. Customize your own or choose from our unique designs.</p>
           <div  style={{width:500,height:2,backgroundColor:"#FFF8E8",marginBottom:50}}></div>
+          <button className='poppins-medium' style={{backgroundColor:"#FFF8E8",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"black",display:"flex",flexDirection:"row",
+
+          }}>Shop now 
+          <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>
+</button>
+          </div>
+          <div className='block sectiondescmob' style={{position:"absolute",left:20,width: "90vw",paddingTop:380}}>
+          <p style={{fontSize: 40,left:120,width: 500,textAlign:"left",color:"#FFF8E8"}} className='protest-guerrilla-regular'>Sticker Store</p> 
+          <p className='poppins-medium' style={{textAlign:"left",marginBottom:50,color:"#FFF8E8"}}>Explore a wide range of fun, creative, and high-quality stickers that let you express yourself wherever you go. Perfect for laptops, notebooks, water bottles, and more. Customize your own or choose from our unique designs.</p>
+          <div  style={{height:2,backgroundColor:"#FFF8E8",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"#FFF8E8",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"black",display:"flex",flexDirection:"row",
 
           }}>Shop now 
@@ -128,7 +148,7 @@ export default function HomePage() {
           
 
         </div>
-        <div >
+        <div className='sectionstickerimglap'>
         <img src={im1} className='sticker block' style={{height:400,position:"absolute",top:-80,left:20}}/>
         <img src={th1} className='sticker block' style={{height:400,position:"absolute",top:-30,left:300}}/>
         <img src={th2} className='sticker block' style={{height:400,position:"absolute",bottom:-30,left: 300,}}/>
@@ -137,21 +157,30 @@ export default function HomePage() {
         <img src={bb1} className='sticker block' style={{height:400,position:"absolute",bottom:20,right: 100,}}/>
         <img src={bb2} className='sticker block' style={{height:400,position:"absolute",top:0,right:100}}/>
         </div>
+        <div className='sectionstickerimgmob'>
+        <img src={im1} className='sticker block' style={{height:200,position:"absolute",top:-30,left:0}}/>
+        <img src={th1} className='sticker block' style={{height:200,position:"absolute",top:-30,left:80}}/>
+        <img src={th2} className='sticker block' style={{height:200,position:"absolute",top:-20,left: 160,}}/>
+        <img src={jw1} className='sticker block' style={{height:200,position:"absolute",left:100,top:100}}/>
+        <img src={jw2} className='sticker block' style={{height:200,position:"absolute",top:100,right:30}}/>
+        <img src={bb1} className='sticker block' style={{height:200,position:"absolute",top:100,left:10}}/>
+        <img src={bb2} className='sticker block' style={{height:200,position:"absolute",top:-10,right:-10}}/>
+        </div>
         
       </section>
       <section style={{justifyContent:"center",alignItems:"center",width:"100vw",backgroundColor:"#FFF8E8",paddingBottom: 100,}}>
-      <p style={{fontSize: 100,}} className='protest-guerrilla-regular sectiontitle'>Our Products</p>
-        <Grid container spacing={5} style={{alignSelf: 'center',paddingLeft: 100,paddingRight: 100,justifyContent:"center",alignItems:"center"}}>
-          <Grid className="block" size={4}>
-            <div style={{height:350,backgroundColor:"#FFF8E8",justifyContent:"center",alignItems:"center",display:"flex",borderColor: "black",borderWidth: 2,flexDirection:"column"}}>
+      <p style={{}} className='protest-guerrilla-regular sectiontitle '>Our Products</p>
+        <Grid container spacing={5} style={{alignSelf: 'center',justifyContent:"center",alignItems:"center"}}>
+          <Grid className="block prod">
+            <div style={{height:350,width: "100%",backgroundColor:"#FFF8E8",justifyContent:"center",alignItems:"center",display:"flex",borderColor: "black",borderWidth: 2,flexDirection:"column"}}>
             <img src={mot1} style={{height:250}}/>
             <br/>
             <div  style={{width:"100%",height:2,backgroundColor:"black",}}></div>
             <div style={{justifyContent:"space-between",alignItems:"center",display:"flex",flexDirection:"row",width: "100%",height:"50%"}}>
-                <p className='poppins-medium' style={{color:"black",marginLeft: 20,fontSize:20}}>Future Sticker</p>
+                <p className='poppins-medium' style={{color:"black",marginLeft: 20,fontSize:15}}>Future Sticker</p>
                 <button className='poppins-medium' style={{marginRight: 20,backgroundColor:"black",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"#FFF8E8",display:"flex",flexDirection:"row"
 
-          }}>Shop now 
+          }}>
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -159,7 +188,7 @@ export default function HomePage() {
             </div>
             </div>
           </Grid>
-          <Grid className="block" size={4}>
+          <Grid className="block prod">
           <div style={{height:350,backgroundColor:"black",justifyContent:"center",alignItems:"center",display:"flex",flexDirection:"column"}}>
           <img src={mot2} style={{height:250}}/>
           <br/>
@@ -168,7 +197,7 @@ export default function HomePage() {
                 <p className='poppins-medium' style={{color:"#FFF8E8",marginLeft: 20,fontSize:20}}>Future Sticker</p>
                 <button className='poppins-medium' style={{marginRight: 20,backgroundColor:"#FFF8E8",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"black",display:"flex",flexDirection:"row"
 
-          }}>Shop now 
+          }}>
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -176,7 +205,7 @@ export default function HomePage() {
             </div>
             </div>
           </Grid>
-          <Grid className="block" size={4}>
+          <Grid className="block prod">
           <div style={{height:350,backgroundColor:"#FFF8E8",justifyContent:"center",alignItems:"center",display:"flex",borderColor: "black",borderWidth: 2,flexDirection:"column"}}>
               <img src={bb1} style={{height:250}}/>
               <br/>
@@ -185,7 +214,7 @@ export default function HomePage() {
                 <p className='poppins-medium' style={{color:"black",marginLeft: 20,fontSize:20}}>Future Sticker</p>
                 <button className='poppins-medium' style={{marginRight: 20,backgroundColor:"black",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"#FFF8E8",display:"flex",flexDirection:"row"
 
-          }}>Shop now 
+          }}>
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -193,7 +222,7 @@ export default function HomePage() {
             </div>
             </div>
           </Grid>
-          <Grid className="block" size={4}>
+          <Grid className="block prod">
             <div style={{height:350,backgroundColor:"black",justifyContent:"center",alignItems:"center",display:"flex",flexDirection:"column"}}>
             <img src={mot3} style={{height:250}}/>
             <br/>
@@ -202,7 +231,7 @@ export default function HomePage() {
                 <p className='poppins-medium' style={{color:"#FFF8E8",marginLeft: 20,fontSize:20}}>Future Sticker</p>
                 <button className='poppins-medium' style={{marginRight: 20,backgroundColor:"#FFF8E8",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"black",display:"flex",flexDirection:"row"
 
-          }}>Shop now 
+          }}>
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -210,7 +239,7 @@ export default function HomePage() {
             </div>
             </div>
           </Grid>
-          <Grid className="block" size={4}>
+          <Grid className="block prod">
           <div style={{height:350,backgroundColor:"#FFF8E8",justifyContent:"center",alignItems:"center",display:"flex",borderColor: "black",borderWidth: 2,flexDirection:"column"}}>
           <img src={mot4} style={{height:250}}/>
           <br/>
@@ -219,7 +248,7 @@ export default function HomePage() {
                 <p className='poppins-medium' style={{color:"black",marginLeft: 20,fontSize:20}}>Future Sticker</p>
                 <button className='poppins-medium' style={{marginRight: 20,backgroundColor:"black",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"#FFF8E8",display:"flex",flexDirection:"row"
 
-          }}>Shop now 
+          }}>
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -227,7 +256,7 @@ export default function HomePage() {
             </div>
             </div>
           </Grid>
-          <Grid className="block" size={4}>
+          <Grid className="block prod">
           <div style={{height:350,backgroundColor:"black",justifyContent:"center",alignItems:"center",display:"flex",flexDirection:"column"}}>
           <img src={jw1} style={{height:250}}/>
           <br/>
@@ -236,7 +265,7 @@ export default function HomePage() {
                 <p className='poppins-medium' style={{color:"#FFF8E8",marginLeft: 20,fontSize:20}}>Future Sticker</p>
                 <button className='poppins-medium' style={{marginRight: 20,backgroundColor:"#FFF8E8",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"black",display:"flex",flexDirection:"row"
 
-          }}>Shop now 
+          }}>
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -249,8 +278,8 @@ export default function HomePage() {
 
       </section>
       
-      <section style={{justifyContent:"center",alignItems:"center",width:"100vw",backgroundColor:"black",padding:100, paddingTop:0,height:"200vh"}}>
-      <p style={{fontSize: 100,color:"#FFF8E8"}} className='protest-guerrilla-regular'>Collections</p>
+      <section className='collections' style={{justifyContent:"center",alignItems:"center",width:"100vw",backgroundColor:"black",padding:100, paddingTop:0,height:"200vh"}}>
+      <p style={{color:"#FFF8E8"}} className='protest-guerrilla-regular sectiontitle'>Collections</p>
       <div style={{width: "90%",height: "150vh",position: "absolute",display:"flex",justifyContent:"center",alignItems:"center"}}>
       <img src={jk1} style={{position: "absolute",height:"200vh",marginRight: 0}}/>
       </div>

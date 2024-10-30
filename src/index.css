@@ -162,6 +162,9 @@ input:focus{
 @tailwind utilities;
 
 @media screen and (max-width:768px) {
+  .collections{
+    display: none;
+  }
   #mobnav{
     display: flex;
   }
@@ -186,7 +189,7 @@ input:focus{
     color: grey;
     width: 150px;
     right: 30px;
-    bottom: 100px;
+    top: 700px;
 
   }
 
@@ -235,6 +238,21 @@ input:focus{
     height: 1100px;
   }
 
+  .sectionstickerimgmob{
+    display: block;
+  }
+
+  .sectionstickerimglap{
+    display: none;
+  }
+
+  .stickerstores{
+    height: 900px;
+  }
+
+  .prod{
+    width: 90%;
+  }
 
   #navbar{
     display: none;
@@ -293,6 +311,19 @@ input:focus{
   .sectiondescmob{
     display: none;
   }
+
+  .sectionstickerimgmob{
+    display: none;
+  }
+
+  .sectionstickerimglap{
+    display: block;
+  }
+
+  .prod{
+    width: 30%;
+  }
+
 
   #mobnav{
     display: none;
