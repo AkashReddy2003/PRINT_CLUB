@@ -1,14 +1,14 @@
 import React from 'react'
 import "../css/storepage.css"
-import thunder from "../assets/img/thunder.svg"
 
 
 
-import pos from "../assets/img/sto_pos.jpg"
-import pos1 from "../assets/img/sto_pos1.jpg"
-import pos3 from "../assets/img/sto_pos3.jpg"
-import pos2 from "../assets/img/pos_spo.jpeg"
-import s1 from "../assets/img/sti_sto.png"
+
+import pos from "../assets/img/sto_pos.webp"
+import pos1 from "../assets/img/sto_pos1.webp"
+import pos3 from "../assets/img/sto_pos3.webp"
+import pos2 from "../assets/img/pos_spo.webp"
+import s1 from "../assets/img/sti_sto.webp"
 
 
 

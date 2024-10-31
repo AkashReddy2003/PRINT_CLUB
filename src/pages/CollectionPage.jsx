@@ -2,16 +2,16 @@ import React from 'react'
 import "../css/collectionpage.css"
 import Grid from '@mui/material/Grid2';
 
-import gam from "../assets/img/gaming.png"
-import nat from "../assets/img/nature-travel.png"
-import mus from "../assets/img/music.png"
-import art from "../assets/img/art-aesthetics.png"
-import anim from "../assets/img/comics-anime.png"
-import spa from "../assets/img/space-scifi.png"
-import mos from "../assets/img/movies-series.png"
-import fan from "../assets/img/cars.png"
-import quo from "../assets/img/quotes-typography.png"
-import spo from "../assets/img/sports.png"
+import gam from "../assets/img/gaming.webp"
+import nat from "../assets/img/nature-travel.webp"
+import mus from "../assets/img/music.webp"
+import art from "../assets/img/art-aesthetics.webp"
+import anim from "../assets/img/comics-anime.webp"
+import spa from "../assets/img/space-scifi.webp"
+import mos from "../assets/img/movies-series.webp"
+import fan from "../assets/img/cars.webp"
+import quo from "../assets/img/quotes-typography.webp"
+import spo from "../assets/img/sports.webp"
 import { useNavigate } from 'react-router-dom';
 
 export default function CollectionPage() {

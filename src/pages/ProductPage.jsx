@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { Button } from '@mui/material';
-import Offerimg from"../assets/img/offerimg.png";
+import Offerimg from"../assets/img/offerimg.webp";
 import StickerFooter from '../components/StickerFooter';
 import ProductList from '../components/ProductList';
 

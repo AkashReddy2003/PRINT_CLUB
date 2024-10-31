@@ -162,6 +162,13 @@ input:focus{
 @tailwind utilities;
 
 @media screen and (max-width:768px) {
+  #root{
+    width: 100vw;
+    overflow: hidden;
+  }
+  body{
+    
+  }
   .collections{
     display: none;
   }
@@ -212,6 +219,7 @@ input:focus{
   }
 
   .sectionsubtitlemob{
+    max-width: 90vw;
     font-size: 40px;
     display: block;
     margin-left: 20px;

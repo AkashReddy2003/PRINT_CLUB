@@ -6,37 +6,37 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 
 
-import bahu from "../assets/img/bahu.png"
-import rag from "../assets/img/ragnar.png"
-import ts from "../assets/img/ts.png"
-import js from "../assets/img/js.png"
-import rs from "../assets/img/vk.png"
-import bb from "../assets/img/bb.png"
-import pos from "../assets/img/poster.png"
-import im1 from "../assets/img/stickers/im_01.png"
-import th1 from "../assets/img/stickers/th_01.png"
-import th2 from "../assets/img/stickers/th_02.png"
-import jw1 from "../assets/img/stickers/jw_01.png"
-import jw2 from "../assets/img/stickers/jw_02.png"
-import bb1 from "../assets/img/stickers/bb_01.png"
-import bb2 from "../assets/img/stickers/bb_02.png"
-import mot1 from "../assets/img/stickers/mot_01.png"
-import mot2 from "../assets/img/stickers/mot_02.png"
-import mot3 from "../assets/img/stickers/mot_03.png"
-import mot4 from "../assets/img/stickers/mot_04.png"
-import jk1 from "../assets/img/stickers/jk_01.png"
-import jk2 from "../assets/img/stickers/jk_02.png"
+
+import rag from "../assets/img/ragnar.webp"
+import ts from "../assets/img/ts.webp"
+import js from "../assets/img/js.webp"
+import rs from "../assets/img/vk.webp"
+import bb from "../assets/img/bb.webp"
+import pos from "../assets/img/poster.webp"
+import im1 from "../assets/img/stickers/im_01.webp"
+import th1 from "../assets/img/stickers/th_01.webp"
+import th2 from "../assets/img/stickers/th_02.webp"
+import jw1 from "../assets/img/stickers/jw_01.webp"
+import jw2 from "../assets/img/stickers/jw_02.webp"
+import bb1 from "../assets/img/stickers/bb_01.webp"
+import bb2 from "../assets/img/stickers/bb_02.webp"
+import mot1 from "../assets/img/stickers/mot_01.webp"
+import mot2 from "../assets/img/stickers/mot_02.webp"
+import mot3 from "../assets/img/stickers/mot_03.webp"
+import mot4 from "../assets/img/stickers/mot_04.webp"
+import jk1 from "../assets/img/stickers/jk_01.webp"
+import jk2 from "../assets/img/stickers/jk_02.webp"
 
 
 
 
 
 
-import ser from "../assets/img/col_series.jpg"
-import gen from "../assets/img/col_general.jpg"
-import mot from "../assets/img/col_mot.jpg"
-import spo from "../assets/img/col_sports.jpg"
-import bg_jk from "../assets/img/bg_jk.jpg"
+import ser from "../assets/img/col_series.webp"
+import gen from "../assets/img/col_general.webp"
+import mot from "../assets/img/col_mot.webp"
+import spo from "../assets/img/col_sports.webp"
+import bg_jk from "../assets/img/bg_jk.webp"
 
 
 import AnimText from './AnimText'

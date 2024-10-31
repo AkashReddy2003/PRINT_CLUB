@@ -1,7 +1,7 @@
 import React from 'react'
-import Cup from "../assets/img/cupsticker.png"
-import Pc from "../assets/img/lapsticker.png"
-import Book from "../assets/img/booksticker.png"
+import Cup from "../assets/img/cupsticker.webp"
+import Pc from "../assets/img/lapsticker.webp"
+import Book from "../assets/img/booksticker.webp"
 export default function StickerFooter() {
     return (
         <div style={{ width: "100vw", minHeight: "100vh" }}>
