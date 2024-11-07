@@ -9,7 +9,7 @@ export default function ProductList({data}) {
     const navigate=useNavigate();
   return (
     <div>
-      <Grid container spacing={4} style={{backgroundColor: "black",minHeight: "100vh",width: "100vw",padding: 50,}}>
+      <Grid container spacing={4} style={{backgroundColor: "black",minHeight: "100vh",width: "100vw",padding: 20,}}>
       {data.map((item)=>{
         return(
           <Grid className="block prod" size={{ md: 6, lg: 3, sm:6,xs:6 }} style={{backgroundColor: "#FFF8E8",display:"flex",justifyContent: 'center',alignItems: 'center',borderRadius: 25,flexDirection: 'column',cursor:"pointer"}} onClick={()=>navigate(`/productpage/${item.id}`)}>
