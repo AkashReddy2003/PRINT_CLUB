@@ -11,11 +11,13 @@
     visibility: hidden;
 }
 
-.tile:hover{
-    background-color: rgba(0,0,0,0.5);
+.tile:hover .tile{
+    z-index: 1;
+    background-color: rgba(0,0,0,0.8);
 }
 
 .tile:hover h1{
+    background-color: rgba(0,0,0,0.8);
     visibility: visible;
 }
 
@@ -23,4 +25,42 @@
     position: absolute;
     visibility: hidden;
     
+}
+@media screen and (min-width:769px) {
+    .tile:hover img{
+        visibility: hidden;
+    }
+    
+    .tile:hover .tile{
+        z-index: 1;
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    .tile:hover h1{
+        background-color: rgba(0,0,0,0.8);
+        visibility: visible;
+    }
+    
+    .tile h1{
+        position: absolute;
+        visibility: hidden;
+        
+    }
+}
+
+@media screen and (max-width:769px) {
+    
+    
+    
+    
+    
+    .tile h1{
+        background-color: rgba(0,0,0,0.5);
+        width: 50%;
+        padding: 10px;
+        visibility: visible;
+        position: absolute;
+        
+        
+    }
 }

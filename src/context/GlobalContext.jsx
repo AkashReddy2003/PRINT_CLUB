@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import jw1 from "../assets/img/stickers/bb_01.webp"
+import jw1 from "../assets/img/stickers/bb_01.png"
 const GloabalContext = createContext();
 
 const MyContextProvider = ({ children }) => {

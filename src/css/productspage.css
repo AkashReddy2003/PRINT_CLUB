@@ -10,3 +10,45 @@
 .prodimg:hover{
     transform: scale(1.2);
 }
+
+
+@media screen and (min-width:769px) {
+    .prod{
+        height: 400px;
+    }
+    .prodimg{
+        height: 250px;
+    }
+    .prodname{
+        font-size: 20px;
+    }
+    .prodprice{
+        font-size: 20px;
+    }
+    .prodadd{
+        width: 50px;
+        height: 50px;
+    }
+
+}
+@media screen and (max-width:769px) {
+    .prod{
+        height: 300px;
+    }
+    .prodimg{
+        height: 150px;
+    }
+    .prodname{
+        font-size: 15px;
+    }
+    .prodprice{
+        font-size: 15px;
+    }
+    .prodadd{
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+    }
+
+
+}
