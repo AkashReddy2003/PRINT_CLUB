@@ -1,0 +1,40 @@
+@media screen and (max-width:769px) {
+    .item{
+        flex-direction: column;
+    }
+    .itemimg{
+        height: 50vh;
+        padding: 50px;
+    }
+    .item1{
+
+    }
+    .item2{
+        width: 100%;
+    }
+    .productfooter{
+        padding: 20px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:769px) {
+    .item{
+        flex-direction: row;
+        padding: 50px;
+        height: 110vh;
+    }
+    .itemimg{
+        height: 50vh;
+    }
+    .item1{
+        position: sticky;
+    }
+    .item2{
+        width: 80%;
+    }
+    .productfooter{
+        padding: 50px;
+        flex-direction: row;
+    }
+}

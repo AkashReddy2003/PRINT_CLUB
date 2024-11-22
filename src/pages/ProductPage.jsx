@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { GloabalContext } from '../context/GlobalContext'
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -12,25 +12,29 @@ import { Button } from '@mui/material';
 import Offerimg from"../assets/img/offerimg.webp";
 import StickerFooter from '../components/StickerFooter';
 import ProductList from '../components/ProductList';
-
+import "../css/Productpage.css"
 export default function ProductPage() {
-    const {myState,data}=useContext(GloabalContext);
-    const {productid}=useParams();
-    const [d,setD]=useState({});
+  const location=useLocation();
+    const {data,cart,setCart,addtocart}=useContext(GloabalContext);
+   const [dat,setDat]=useState([]);
+    const [d,setD]=useState(location.state);
     const [quantity,setQuantity]=useState(1);
     useEffect(()=>{
-        let a=data.filter((item)=>item.id==productid);
-        setD(a[0]);
-        console.log(a);
-    },[])
+      
+      setD(location.state)
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      let Data=data.filter((i)=>((i.collection==d.collection&&i.store==d.store)?true:false));
+      setDat(Data);
+    },[location])
+    
   return (
     <div>
-      <div style={{width: "100vw",display:"flex",flexDirection: 'row',backgroundColor:"black",height: "110vh",overflowY:"auto",position: "relative",padding:50,gap:70}}>
-        <div style={{width: "100%",display:"flex",alignItems:"center",justifyContent:"center",backgroundColor: "#FFF8E8",position:"sticky",top:0}}>
-        <img src={d.img} style={{height: '90vh'}}/>
+      <div className='item' style={{width: "100vw",display:"flex",backgroundColor:"black",overflowY:"auto",position: "relative",gap:70}}>
+        <div className='item1' style={{width: "100%",display:"flex",alignItems:"center",justifyContent:"center",backgroundColor: "#FFF8E8",top:0}}>
+        <img className='itemimg' src={d.image} />
         </div>
         
-        <div style={{width: "80%",color:"#FFF8E8",textAlign:"left",}}>
+        <div className='item2' style={{color:"#FFF8E8",textAlign:"left",}}>
             <div style={{margin:50,marginTop:0}}>
             <h1 className='protest-guerrilla-regular prodname' style={{fontSize:60}}>{d.name}</h1>
             <h1 className='poppins-medium' style={{fontSize: 20,}}>{d.store+" "+d.collection}</h1>
@@ -43,13 +47,13 @@ export default function ProductPage() {
                 <Button onClick={()=>setQuantity((Number)((Number)(quantity)+1))}><AddIcon/></Button>
             </div>
             <img src={Offerimg} style={{marginLeft: 50,height: 200,marginTop: 20,}}/>
-            <Button  style={{margin:50,backgroundColor: "#FFF8E8",paddingLeft:20,paddingRight:20,width: "80%",}}><span className='poppins-medium' style={{fontSize: 20,color:"black"}}>Add to cart</span></Button>
+            <Button  style={{margin:50,backgroundColor: "#FFF8E8",paddingLeft:20,paddingRight:20,width: "80%",}} onClick={()=>{console.log(d,quantity);addtocart(d,quantity)}}><span className='poppins-medium' style={{fontSize: 20,color:"black"}} >Add to cart</span></Button>
             <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:"#FFF8E8"}}/>}
           aria-controls="panel2-content"
           id="panel2-header"
-          style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: 50,}}
+          style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: window.screen.width>1300?50:20,}}
         >
           <Typography  style={{fontSize: 20,}}><h1 className='protest-guerrilla-regular'>Product description</h1></Typography>
         </AccordionSummary>
@@ -84,7 +88,7 @@ Transform your everyday items into unique expressions of style with these durabl
           expandIcon={<ExpandMoreIcon style={{color:"#FFF8E8"}}/>}
           aria-controls="panel2-content"
           id="panel2-header"
-          style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: 50,paddingBottom:50}}
+          style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: window.screen.width>1300?50:20,paddingBottom:window.screen.width>1300?50:0}}
         >
           <Typography  style={{fontSize: 20,}}><h1 className='protest-guerrilla-regular'>Service policy</h1></Typography>
         </AccordionSummary>
@@ -129,7 +133,7 @@ Transform your everyday items into unique expressions of style with these durabl
       <StickerFooter/>
       <div style={{width: "100vw",backgroundColor: "black",textAlign:"left",}}>
       <h1 className='protest-guerrilla-regular' style={{ color: "#FFF8E8", fontSize: 30,paddingLeft:100,paddingTop:50 }}>Similar Products</h1>
-      <ProductList data={data}/>
+      <ProductList data={dat}/>
       </div>
       
 

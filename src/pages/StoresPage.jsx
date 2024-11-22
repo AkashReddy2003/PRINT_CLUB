@@ -14,7 +14,9 @@ import s1 from "../assets/img/sti_sto.webp"
 
 
 import AnimText from './AnimText'
+import { useNavigate } from 'react-router-dom'
 export default function StoresPage() {
+  const navigate=useNavigate();
   return (
     <div className="diagonal-container">
       {/* Posters Section */}
@@ -33,7 +35,7 @@ export default function StoresPage() {
       </div>
 
       {/* Stickers Section */}
-      <div className="diagonal-section stickers">
+      <div className="diagonal-section stickers" onClick={()=>navigate(`/product/Store/collection`,{state:{store:"",collection:""}})}>
      <img src={s1} style={{position: "absolute",width: "100vw",bottom:0}}/>
      <div className='hov' style={{zIndex: 1,backgroundColor: "rgba(0,0,0,0.5)",width: "100vw",height: "80vh",justifyContent:"center",alignItems:"center",display:"flex"}}>
         <p style={{fontSize: 100,color:"#FFF8E8"}} className='protest-guerrilla-regular'>STICKER STORE</p>

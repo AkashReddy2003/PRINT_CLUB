@@ -36,7 +36,7 @@ export default function CollectionPage() {
       <Grid container spacing={4} style={{padding: 20,paddingBottom: 50,}}>
         {data.map((item)=>{
             return(
-                <Grid className="tile" size={{ md: 6, lg: 4, sm:12 }} onClick={()=>navigate(`/product/${"Store"}/${item.name}`)}>
+                <Grid className="tile" size={{ md: 6, lg: 4, sm:12 }} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"",collection:item.name}})}>
                     
                     <h1 style={{fontSize: 20,color:"#FFF8E8"}} className='protest-guerrilla-regular'>{item.name}</h1>
                     <img src={item.img}/>

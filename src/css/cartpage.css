@@ -1,0 +1,46 @@
+@media screen and (min-width:769px) {
+    .cartmain{
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        background-color: #FFF8E8;
+    }
+    .cartprod{
+        width: 60vw;
+        background-color: black;
+        min-height: 100vh;
+        margin: 30px;
+        border-radius: 20px;
+    }
+    .carthead{
+        color: #FFF8E8;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .prodname1{
+        color: #FFF8E8;
+        text-align: left;
+        margin-top: 40px;
+        margin-left: 30px;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .prodprice1{
+        color: #FFF8E8;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width:769px) {
+
+
+}
