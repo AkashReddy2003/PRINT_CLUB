@@ -23,7 +23,7 @@ const MyContextProvider = ({ children }) => {
       })
       console.log(products);
       let x=localStorage.getItem("cart")
-      console.log(x.at(1))
+      
 
       x=JSON.parse(x);
       console.log(x)
