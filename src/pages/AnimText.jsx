@@ -72,9 +72,9 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   );
 }
 
-export default function AnimText({children}) {
+export default function AnimText({style,children}) {
   return (
-    <section>
+    <section style={{...style}}>
       <ParallaxText baseVelocity={-5}>{children}</ParallaxText>
       <ParallaxText baseVelocity={5}>{children}</ParallaxText>
     </section>

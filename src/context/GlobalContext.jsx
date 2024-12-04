@@ -36,7 +36,7 @@ const MyContextProvider = ({ children }) => {
     })
   }
   const addtocart=async(a,quantity)=>{
-    let c=cart;
+    let c=[...cart];
     let p=false;
     console.log(a,quantity);
     
@@ -58,8 +58,13 @@ const MyContextProvider = ({ children }) => {
     
     console.log(cart)
   }
+
+  const cartclear=()=>{
+    setCart([]);
+    localStorage.removeItem("cart");
+  }
   const deletefromcart=(a)=>{
-    let c=cart;
+    let c=[...cart];
     
     c=c.filter((x)=>a!=x.product?true:false);
     setCart(c);
@@ -67,6 +72,9 @@ const MyContextProvider = ({ children }) => {
     
   }
   
+  const storeOrder=async(x)=>{
+    push(ref(db,"orders/"),x);
+  }
   useEffect(()=>{
 
     getData();
@@ -158,7 +166,7 @@ const MyContextProvider = ({ children }) => {
   //   },
   // ]
   return (
-    <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart}}>
+    <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart,storeOrder,cartclear}}>
       {children}
     </GloabalContext.Provider>
   );

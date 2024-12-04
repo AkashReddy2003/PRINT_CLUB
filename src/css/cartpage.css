@@ -1,7 +1,7 @@
 @media screen and (min-width:769px) {
     .cartmain{
         width: 100vw;
-        min-height: 100vh;
+        
         display: flex;
         flex-direction: row;
         background-color: #FFF8E8;
@@ -9,7 +9,8 @@
     .cartprod{
         width: 60vw;
         background-color: black;
-        min-height: 100vh;
+       height: 100vh;
+       overflow: scroll;
         margin: 30px;
         border-radius: 20px;
     }
@@ -38,9 +39,137 @@
         margin-bottom: 10px;
     }
 
+    .cartcheck{
+        width: 30vw;
+        text-align: left;
+        margin: 30px;
+        border-radius: 20px;
+        display: flex;
+        
+        flex-direction: column;
+    }
+
+    .carttag{
+        color: #FFF8E8;
+        
+        
+        
+        font-size: 25px;
+        
+        
+    }
+    .carttag1{
+        color: #FFF8E8;
+        
+        
+        margin-left: 30px;
+        font-size: 25px;
+        
+        
+    }
+
+    .cc{
+        background-color: black;
+        padding: 20px;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .checkout{
+        width: 60vw;
+        background-color: black;
+        min-height: 50vh;
+        margin: 30px;
+        border-radius: 20px;
+    }
+
 }
 
 @media screen and (max-width:769px) {
 
+    .cartmain{
+        width: 100vw;
+        
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF8E8;
+    }
+    .cartprod{
+        width: 90vw;
+        background-color: black;
+       height: 100vh;
+       overflow: scroll;
+        margin: 30px;
+        border-radius: 20px;
+    }
+    .carthead{
+        color: #FFF8E8;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .prodname1{
+        color: #FFF8E8;
+        text-align: left;
+        margin-top: 40px;
+        margin-left: 30px;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .prodprice1{
+        color: #FFF8E8;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 
+    .cartcheck{
+        width: 85vw;
+        text-align: left;
+        margin: 30px;
+        border-radius: 20px;
+        display: flex;
+        
+        flex-direction: column;
+    }
+
+    .carttag{
+        color: #FFF8E8;
+        
+        
+        
+        font-size: 25px;
+        
+        
+    }
+    .carttag1{
+        color: #FFF8E8;
+        
+        
+        margin-left: 30px;
+        font-size: 25px;
+        
+        
+    }
+
+    .cc{
+        background-color: black;
+        padding: 20px;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .checkout{
+        width: 80vw;
+        background-color: black;
+        min-height: 50vh;
+        margin: 30px;
+        border-radius: 20px;
+    }
 }

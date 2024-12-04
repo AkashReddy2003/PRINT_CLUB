@@ -15,10 +15,15 @@ import s1 from "../assets/img/sti_sto.webp"
 
 import AnimText from './AnimText'
 import { useNavigate } from 'react-router-dom'
+import Button from '@mui/joy/Button'
+import posbg from '../assets/img/pos.webp';
+import sti from '../assets/img/sti.webp';
 export default function StoresPage() {
   const navigate=useNavigate();
+  
   return (
-    <div className="diagonal-container">
+    <>
+    {window.screen.width>769?<div className="diagonal-container">
       {/* Posters Section */}
       <div className="diagonal-section posters">
       
@@ -46,6 +51,21 @@ export default function StoresPage() {
       <div className="slanted-bordered-div">
       <AnimText>PRINT CLUB #</AnimText>
       </div>
+    </div>:
+    <div style={{minHeight: "100vh",width: "100vw",backgroundColor:"black",display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+      <div style={{height: "100vh",width: "100vw",backgroundColor:"black",display:"flex",flexDirection:"column",overflow:"hidden"}}>
+      <div style={{transform:'rotate(90deg)',width: '20vw',height:100,display:"flex"}}><AnimText  >PRINT CLUB #</AnimText></div>
+      <div style={{transform:'rotate(90deg)',width:'20vw',height:100,display:"flex",marginTop:320}}><AnimText  >PRINT CLUB #</AnimText></div>
+      
     </div>
+    <div>
+      <Button variant='outline' style={{width: "70vw",marginBottom: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"poster",collection:""}})}><img src={posbg} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Poster Store</p></Button>
+      <Button variant='outline' style={{width: "70vw",marginTop: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"",collection:""}})}><img src={sti} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Sticker Store</p></Button>
+    </div>
+    </div>
+    }
+    
+    </>
+    
   )
 }
