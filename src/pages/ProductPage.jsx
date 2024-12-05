@@ -31,7 +31,7 @@ export default function ProductPage() {
     
   return (
     <div>
-      <div className='item' style={{width: "100vw",display:"flex",backgroundColor:"black",overflowY:"auto",position: "relative",gap:70}}>
+      <div className='item' style={{width: "100vw",display:"flex",backgroundColor:"black",position: "relative",gap:70}}>
         <div className='item1' style={{width: "100%",display:"flex",alignItems:"center",justifyContent:"center",backgroundColor: "#FFF8E8",top:0}}>
         <img className='itemimg' src={d.image} />
         </div>

@@ -23,6 +23,7 @@
         flex-direction: row;
         padding: 50px;
         height: 110vh;
+        overflow-y: auto;
     }
     .itemimg{
         height: 70vh;
