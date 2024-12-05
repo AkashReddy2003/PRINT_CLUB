@@ -83,6 +83,9 @@
         margin: 30px;
         border-radius: 20px;
     }
+    .checkoutmob{
+        display: none !important;
+    }
 
 }
 
@@ -171,5 +174,8 @@
         min-height: 50vh;
         margin: 30px;
         border-radius: 20px;
+    }
+    .checkoutpc{
+        display: none !important;
     }
 }

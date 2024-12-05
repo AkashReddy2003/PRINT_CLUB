@@ -19,7 +19,7 @@ const MyContextProvider = ({ children }) => {
       
       console.log(snapshot)
       snapshot.forEach(a=>{
-        products.push(a.val());
+        products.push({id:a.key,...a.val()});
       })
       console.log(products);
       let x=localStorage.getItem("cart")

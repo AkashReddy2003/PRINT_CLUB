@@ -20,11 +20,11 @@ export default function ProductList({data}) {
       {data.map((item)=>{
         return(
           <Grid className={window.screen.width>1300?"block prod":"prod"} size={{ md: 6, lg: 3, sm:6,xs:6 }} style={{backgroundColor: "#FFF8E8",display:"flex",justifyContent: 'center',alignItems: 'center',borderRadius: 25,flexDirection: 'column',cursor:"pointer"}} >
-            <img src={item.image}  className='prodimg' onClick={()=>{navigate(`/productpage/product`,{state:item})}}/>
+            <img src={item.image}  className='prodimg' onClick={()=>{navigate(`/productpage/${item.id}`)}}/>
             <div style={{backgroundColor: "black",width: "100%",height: 5,marginBottom: 2,}}/>
             <div style={{width: "100%",display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
               <div style={{textAlign:"left",marginLeft: 20,}}>
-              <h1 className='protest-guerrilla-regular prodname' onClick={()=>{navigate(`/productpage/product`,{state:item})}}>{item.name}</h1>
+              <h1 className='protest-guerrilla-regular prodname' onClick={()=>{navigate(`/productpage/${item.id}`)}}>{item.name}</h1>
             <h1 className='poppins-medium prodcollection'>{item.store}</h1>
             <h1 className='poppins-medium prodprice' ><span style={{textDecoration:"line-through",marginRight: 10,color:"red"}}>{"$"+item.price}</span>{"$"+item.discountPrice}</h1>
               </div>

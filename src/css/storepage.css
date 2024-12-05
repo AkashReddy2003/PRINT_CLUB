@@ -72,3 +72,18 @@
   
   text-align: center;
 }
+@media screen and (min-width:769px) {
+  
+  .mobstore{
+    visibility: hidden;
+    display: none !important;
+  }
+}
+@media screen and (max-width:769px) {
+  .pcstore{
+    visibility: hidden !important;
+    display: none;
+  }
+  
+  
+}

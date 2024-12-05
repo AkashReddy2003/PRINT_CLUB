@@ -52,7 +52,7 @@ export default function Main() {
             <ListItemButton>
              
             
-              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Cart</a></ListItemText>
+              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/cart")}>Cart</a></ListItemText>
              
             </ListItemButton>
           </ListItem>

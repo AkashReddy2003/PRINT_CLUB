@@ -23,7 +23,7 @@ export default function StoresPage() {
   
   return (
     <>
-    {window.screen.width>769?<div className="diagonal-container">
+    <div className="diagonal-container pcstore">
       {/* Posters Section */}
       <div className="diagonal-section posters">
       
@@ -51,8 +51,8 @@ export default function StoresPage() {
       <div className="slanted-bordered-div">
       <AnimText>PRINT CLUB #</AnimText>
       </div>
-    </div>:
-    <div style={{minHeight: "100vh",width: "100vw",backgroundColor:"black",display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+    </div>
+    <div className='mobstore' style={{minHeight: "100vh",width: "100vw",backgroundColor:"black",display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
       <div style={{height: "100vh",width: "100vw",backgroundColor:"black",display:"flex",flexDirection:"column",overflow:"hidden"}}>
       <div style={{transform:'rotate(90deg)',width: '20vw',height:100,display:"flex"}}><AnimText  >PRINT CLUB #</AnimText></div>
       <div style={{transform:'rotate(90deg)',width:'20vw',height:100,display:"flex",marginTop:320}}><AnimText  >PRINT CLUB #</AnimText></div>
@@ -63,7 +63,7 @@ export default function StoresPage() {
       <Button variant='outline' style={{width: "70vw",marginTop: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"",collection:""}})}><img src={sti} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Sticker Store</p></Button>
     </div>
     </div>
-    }
+    
     
     </>
     

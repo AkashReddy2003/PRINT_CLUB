@@ -162,7 +162,8 @@ export default function CartPage() {
     }
     useEffect(()=>{
          console.log(cart)
-    },[cart])
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+    },[cart,pos])
 
     const getPincodeData=async(a)=>{
       await axios.get("https://api.postalpincode.in/pincode/"+a).then((res)=>{
@@ -197,7 +198,9 @@ export default function CartPage() {
 </div>
   
  
-</div>:<div className='checkout'>
+</div>:
+<>
+<div className='checkout checkoutpc'>
 <h1 className='carthead protest-guerrilla-regular'><span style={{cursor:"pointer"}} onClick={()=>setPos("cart")}>Cart</span> { " > "} Checkout</h1>
 <div style={{width: "100%",height:2,backgroundColor:"#FFF8E8",}}/>
 <div style={{margin: 30,}}>
@@ -299,6 +302,111 @@ export default function CartPage() {
 
 
 </div>  
+<div className='checkout checkoutmob'>
+<h1 className='carthead protest-guerrilla-regular'><span style={{cursor:"pointer"}} onClick={()=>setPos("cart")}>Cart</span> { " > "} Checkout</h1>
+<div style={{width: "100%",height:2,backgroundColor:"#FFF8E8",}}/>
+<div style={{margin: 30,}}>
+<div style={{display:"flex" ,flexDirection:"column"}}>
+<FormControl style={{margin:10,width: "98%",}}>
+  <FormLabel style={{color:"#FFF8E8"}}>First Name *</FormLabel>
+  <Input style={{backgroundColor:"black",color:"#FFF8E8"}} placeholder='Enter your First name' onChange={(e)=>{
+    let ad=address;
+    ad.name=e.target.value;
+    setAddress(ad);
+  }} />
+</FormControl>
+<FormControl style={{margin:10,width: "98%",}}>
+  <FormLabel style={{color:"#FFF8E8"}}>Last Name *</FormLabel>
+  <Input style={{backgroundColor:"black",color:"#FFF8E8"}} placeholder='Enter your Last name' onChange={(e)=>{
+    let ad=address;
+    ad.last=e.target.value;
+    setAddress(ad);
+  }} />
+</FormControl>
+</div>
+
+<div style={{display:"flex" ,flexDirection:"column"}}>
+
+<FormControl style={{margin:10,width: "100%"}}>
+  <FormLabel style={{color:"#FFF8E8"}}>Email *</FormLabel>
+  <Input style={{backgroundColor:"black",color:"#FFF8E8"}} placeholder='Enter your email address'onChange={(e)=>{
+    let ad=address;
+    ad.email=e.target.value;
+    setAddress(ad);
+  }} />
+</FormControl>
+<FormControl style={{margin:10,width: "100%"}}>
+  <FormLabel style={{color:"#FFF8E8"}}>Phone Number *</FormLabel>
+  <Input style={{backgroundColor:"black",color:"#FFF8E8"}} placeholder='Enter your phone number' onChange={(e)=>{
+    let ad=address;
+    ad.phone=e.target.value;
+    setAddress(ad);
+  }}/>
+</FormControl>
+
+</div>
+<FormControl style={{margin:10,width: "98%",}}>
+  <FormLabel style={{color:"#FFF8E8"}}>Address *</FormLabel>
+  <Input style={{backgroundColor:"black",color:"#FFF8E8"}} placeholder='Enter your address with house no and street name' onChange={(e)=>{
+    let ad=address;
+    ad.full=e.target.value;
+    setAddress(ad);
+  }}/>
+</FormControl>
+<FormControl style={{margin:10,width: "98%",}}>
+  <FormLabel style={{color:"#FFF8E8"}}>Pincode *</FormLabel>
+  <Input style={{backgroundColor:"black",color:"#FFF8E8"}} placeholder='Enter your area pincode' onChange={(e)=>{getPincodeData(e.target.value);let ad=address;
+    ad.pincode=e.target.value;
+    setAddress(ad);}} />
+</FormControl>
+<div style={{display:"flex" ,flexDirection:"column" ,marginBottom:50}}>
+<FormControl style={{margin:10,width: "100%"}}>
+  <FormLabel style={{color:"#FFF8E8"}}>Post Office *</FormLabel>
+  <Select placeholder="Enter pincode" onChange={(event,newValue)=>{let ad=address;
+    ad.city=newValue;
+    setAddress(ad);}}>
+    {pincodedata?pincodedata.map((a)=>{
+      return(
+        <Option value={a.Name}>{a.Name}</Option>
+      )
+    }):""}
+
+</Select>
+</FormControl>
+<FormControl style={{margin:10,width: "100%"}}>
+  <FormLabel style={{color:"#FFF8E8"}}>District *</FormLabel>
+  <Select placeholder="Enter pincode" >
+    {pincodedata?pincodedata.map((a)=>{
+      return(
+        <Option value={a.District }>{a.District}</Option>
+      )
+    }):""}
+
+</Select>
+</FormControl>
+<FormControl style={{margin:10,width: "100%"}}>
+  <FormLabel style={{color:"#FFF8E8"}}>State *</FormLabel>
+  <Select placeholder="Enter pincode" onChange={(event,newValue)=>{let ad=address;
+    ad.state=newValue;
+    setAddress(ad);}}>
+    {pincodedata?pincodedata.map((a)=>{
+      return(
+        <Option value={a.State}>{a.State}</Option>
+      )
+    }):""}
+
+</Select>
+</FormControl>
+
+</div>
+</div>
+
+
+
+</div>  
+</>
+
+
   }
   
   <div className='cartcheck' >

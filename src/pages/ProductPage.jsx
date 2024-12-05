@@ -14,18 +14,20 @@ import StickerFooter from '../components/StickerFooter';
 import ProductList from '../components/ProductList';
 import "../css/Productpage.css"
 export default function ProductPage() {
-  const location=useLocation();
+ 
     const {data,cart,setCart,addtocart}=useContext(GloabalContext);
+    const {productid}=useParams();
    const [dat,setDat]=useState([]);
-    const [d,setD]=useState(location.state);
+    const [d,setD]=useState({});
     const [quantity,setQuantity]=useState(1);
     useEffect(()=>{
-      
-      setD(location.state)
+      console.log(productid);
+      let d=data.filter((a)=>a.id==productid?true:false)[0];
+      setD(d)
       window.scrollTo({ top: 0, behavior: 'smooth' });
       let Data=data.filter((i)=>((i.collection==d.collection&&i.store==d.store)?true:false));
       setDat(Data);
-    },[location])
+    },[productid])
     
   return (
     <div>

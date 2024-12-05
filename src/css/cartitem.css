@@ -1,0 +1,22 @@
+
+
+@media screen and (min-width:769px) {
+    .citempc{
+      visibility: visible;
+        
+    }
+    .citemmob{
+      visibility: hidden;
+      display: none !important;
+    }
+  }
+  @media screen and (max-width:769px) {
+    .citempc{
+      visibility: hidden ;
+      display: none !important;
+    }
+    .citemmob{
+      visibility: visible;
+    }
+    
+  }
