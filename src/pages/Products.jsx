@@ -42,11 +42,11 @@ export default function Products() {
     ];
   useEffect(()=>{
     
-      
+    window.scrollTo({ top: 0, behavior: 'smooth' });
       let a=data.filter((i)=>(((i.collection==collection||collection=="")&&(i.store==store||store=="")&&(i.tags.some(x=>tags.includes(x))||tags.length==0))?true:false));
       let x=[];
       data.map((i)=>{i.tags.map((it)=>x.includes(it)?"":x.push(it))});
-      setTagslist(x);
+      setTagslist(x.sort());
       setData(a);
       
     
@@ -57,7 +57,7 @@ export default function Products() {
   return (
     <div style={{backgroundColor: "black",width: "100vw",}}>
      <p className='poppins-medium' style={{color:"#FFF8E8",textAlign:"left",padding:20,paddingLeft:window.screen.width>1300?50:0}}>{store+" → "+collection}</p>
-     <p style={{textAlign:"left",color:"#FFF8E8",paddingLeft:window.screen.width>1300?50:20}} className='protest-guerrilla-regular productshead'>{collection!=""?collection:"All"}<span style={{fontSize:30}}>{"        "+store}</span></p>
+     <p style={{textAlign:"left",color:"#FFF8E8",paddingLeft:window.screen.width>1300?50:20}} className='protest-guerrilla-regular productshead'>{collection!=""?collection:"All"}<span style={{fontSize:30}}>  {Data.length}</span></p>
      <div className='filterchips' style={{width: "100vw",display:"flex",paddingLeft:0,alignItems:"center",justifyContent:"center"}}>
       
 <Button className='poppins-medium' color="success" label="FILTERS" style={{backgroundColor: "#FFF8E8",color:"black"}} onClick={()=>setOpen(true)}>Filter</Button>

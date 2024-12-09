@@ -25,7 +25,7 @@ export default function StoresPage() {
     <>
     <div className="diagonal-container pcstore">
       {/* Posters Section */}
-      <div className="diagonal-section posters">
+      <div className="diagonal-section posters" onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Poster",collection:""}})}>
       
         <img src={pos} style={{height:"80vh",width: "25vw",position:"absolute",right:0}}/>
         <img src={pos1} style={{height:"80vh",width: "25vw",position:"absolute",right:"25vw"}}/>
@@ -40,7 +40,7 @@ export default function StoresPage() {
       </div>
 
       {/* Stickers Section */}
-      <div className="diagonal-section stickers" onClick={()=>navigate(`/product/Store/collection`,{state:{store:"",collection:""}})}>
+      <div className="diagonal-section stickers" onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Sticker",collection:""}})}>
      <img src={s1} style={{position: "absolute",width: "100vw",bottom:0}}/>
      <div className='hov' style={{zIndex: 1,backgroundColor: "rgba(0,0,0,0.5)",width: "100vw",height: "80vh",justifyContent:"center",alignItems:"center",display:"flex"}}>
         <p style={{fontSize: 100,color:"#FFF8E8"}} className='protest-guerrilla-regular'>STICKER STORE</p>
@@ -59,8 +59,8 @@ export default function StoresPage() {
       
     </div>
     <div>
-      <Button variant='outline' style={{width: "70vw",marginBottom: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"poster",collection:""}})}><img src={posbg} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Poster Store</p></Button>
-      <Button variant='outline' style={{width: "70vw",marginTop: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"",collection:""}})}><img src={sti} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Sticker Store</p></Button>
+      <Button variant='outline' style={{width: "70vw",marginBottom: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Poster",collection:""}})}><img src={posbg} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Poster Store</p></Button>
+      <Button variant='outline' style={{width: "70vw",marginTop: 50,}} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Sticker",collection:""}})}><img src={sti} style={{objectFit:"cover"}}/><p style={{position: "absolute",backgroundColor:'rgba(0, 0, 0, 0.5)',width: "100%",height:"100%",alignSelf:"center",color:"#FFF8E8",paddingTop:"40%" ,fontSize:20}} className='protest-guerrilla-regular'>Sticker Store</p></Button>
     </div>
     </div>
     

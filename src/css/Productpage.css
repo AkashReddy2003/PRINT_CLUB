@@ -4,6 +4,7 @@
     }
     .itemimg{
         height: 50vh;
+        object-fit: contain;
         padding: 50px;
     }
     .item1{
@@ -27,6 +28,7 @@
     }
     .itemimg{
         height: 70vh;
+        object-fit: contain;
     }
     .item1{
         position: sticky;

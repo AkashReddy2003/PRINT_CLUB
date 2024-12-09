@@ -6,7 +6,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 
 
-
+import log from "../assets/img/logo.webp"
 import rag from "../assets/img/ragnar.webp"
 import ts from "../assets/img/ts.webp"
 import js from "../assets/img/js.webp"
@@ -42,12 +42,13 @@ import bg_jk from "../assets/img/bg_jk.webp"
 import AnimText from './AnimText'
 import { Box } from '@mui/material';
 import BorderAnim from './BorderAnim';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function HomePage() {
-  
+  const navigate=useNavigate();
   return (
     <div id='main'>
       
@@ -78,7 +79,7 @@ export default function HomePage() {
           <p style={{fontSize: 40,left:120,width: 500,textAlign:"left",color:"black"}} className='protest-guerrilla-regular'>Poster Store</p> 
           <p className='poppins-medium' style={{width: 500,textAlign:"left",marginBottom:50}}>Transform any room with our exclusive collection of posters. From modern art to inspirational quotes, our designs help you express your style and make your walls come alive. Printed on premium-quality paper for a lasting impression.</p>
           <div  style={{width:500,height:2,backgroundColor:"black",marginBottom:50}}></div>
-          <button className='poppins-medium' style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
+          <button className='poppins-medium' onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Poster",collection:""}})} style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
 
           }}>Shop now 
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -92,7 +93,7 @@ export default function HomePage() {
           <div  style={{height:2,backgroundColor:"black",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
 
-          }}>Shop now 
+          }} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Sticker",collection:""}})}>Shop now 
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>

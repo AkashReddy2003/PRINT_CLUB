@@ -73,7 +73,7 @@ const MyContextProvider = ({ children }) => {
   }
   
   const storeOrder=async(x)=>{
-    push(ref(db,"orders/"),x);
+    return push(ref(db,"orders/"),x);
   }
   useEffect(()=>{
 
