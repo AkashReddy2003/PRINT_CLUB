@@ -202,25 +202,23 @@ export default function CartPage() {
           <h1 className='protest-guerrilla-regular' style={{ fontSize: 30, letterSpacing: 8 }}> Your cart is empty</h1>
           <Button1 variant='solid' color='warning' onClick={() => navigate(`/product/Store/collection`, { state: { store: "", collection: "" } })}><p className='poppins-medium' style={{ fontSize: 15, }} >Continue shopping</p></Button1>
         </div> :
+        <div style={{display:"flex",flexDirection:"column",justifyContent:"center",width: "100vw",backgroundColor:"#FFF8E8"}}>
+          <h1 className='protest-guerrilla-regular chead' style={{alignSelf:"center",textAlign:"center"}}>SHOPPING CART</h1>
+          
         <div className='cartmain'>
-
+          
           {pos == "cart" ?
-            <div className='cartprod'>
-              <h1 className='carthead protest-guerrilla-regular'>{pos == "cart" ? "Cart" : "Checkout"}</h1>
-              <div style={{ width: "100%", height: 2, backgroundColor: "#FFF8E8", }} />
-
-              <div>
-                {cart ? cart.map((a) => {
+            <div className='cmain'>
+            <div style={{backgroundColor:"black",height: 1,width: "80%",marginTop:20}}></div>
+          {cart ? cart.map((a) => {
                   return (
                     <CartItem a={a} />
                   )
 
 
                 }) : ""}
-              </div>
 
-
-            </div> :
+          </div> :
             <>
               <div className='checkout checkoutpc'>
                 <h1 className='carthead protest-guerrilla-regular'><span style={{ cursor: "pointer" }} onClick={() => setPos("cart")}>Cart</span> {" > "} Checkout</h1>
@@ -229,7 +227,7 @@ export default function CartPage() {
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <FormControl style={{ margin: 10, width: "98%", }}>
                       <FormLabel style={{ color: "#FFF8E8" }}>First Name *</FormLabel>
-                      <Input style={{ backgroundColor: "black", color: "#FFF8E8" }} placeholder='Enter your First name' onChange={(e) => {
+                      <Input style={{ backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 0,borderBottomWidth: 2,borderRadius: 0,}} placeholder='Enter your First name' onChange={(e) => {
                         let ad = address;
                         ad.name = e.target.value;
                         setAddress(ad);
@@ -445,12 +443,17 @@ export default function CartPage() {
 
           <div className='cartcheck' >
             <div className='cc'>
-              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40 }}><span className='carttag'>Subtotal </span><span className='carttag1'>{"Rs. " + Number(total + discountTotal)}</span></p>
-              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 20 }}><span className='carttag'>Discount </span><span className='carttag1' style={{ color: "red" }}>{"- Rs. " + discountTotal}</span></p>
-              <div style={{ width: "100%", height: 2, backgroundColor: "#FFF8E8", display: "flex" }} />
-              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 20 }}><span className='carttag'>Grand total </span><span className='carttag1' style={{ color: "green" }}>{"Rs. " + total}</span></p>
+              <h1 style={{alignSelf:"center",fontSize:30,width: "100%",marginBottom: 10,marginLeft: 10,}} className='protest-guerrilla-regular'>ORDER SUMMARY</h1>
+              <div style={{ width: "100%", height: 2, backgroundColor: "black", display: "flex" }} />
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40 }}><span className='carttag poppins-medium'>Subtotal </span><span className='carttag1 poppins-medium'>{"Rs. " + Number(total + discountTotal)}</span></p>
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 10 }}><span className='carttag poppins-medium'>Discount </span><span className='carttag1 poppins-medium' style={{ color: "red" }}>{"- Rs. " + discountTotal}</span></p>
+              <div style={{ width: "100%", height: 2, backgroundColor: "black", display: "flex" }} />
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 0 }}><span className='carttag poppins-medium'>Grand total </span><span className='carttag1 poppins-medium' style={{ color: "green" }}>{"Rs. " + total}</span></p>
+              <div style={{ width: "100%", height: 2, backgroundColor: "black", display: "flex" }} />
               {pos == "cart" ?
-                <Button variant="contained" onClick={() => {
+                <Button variant="outlined"
+                
+                onClick={() => {
                   if (total >= 225) {
                     setPos("checkout")
                   } else {
@@ -461,18 +464,22 @@ export default function CartPage() {
                 }} style={{
                   alignSelf: "center",
                   width: "80%",
-                  margin: "20px auto",
-                  display: "block" // Ensures it behaves as a block-level element for centering
-                }}>Checkout</Button> :
+                  margin: "0px auto",
+                  display: "block", // Ensures it behaves as a block-level element for centering
+                  borderWidth: 0,
+                  color:"black"
+                }}><p className='protest-guerrilla-regular' style={{fontSize: 30,}}>Checkout</p></Button> :
                 ""
               }
 
-              {pos == "checkout" ? <Button variant="contained" onClick={async () => { handleRazorpayScreen(total) }} style={{
+              {pos == "checkout" ? <Button variant="outlined" onClick={async () => { handleRazorpayScreen(total) }} style={{
                 alignSelf: "center",
                 width: "80%",
-                margin: "20px auto",
-                display: "block" // Ensures it behaves as a block-level element for centering
-              }}>Pay now</Button> : ""}
+                margin: "0px auto",
+                display: "block", // Ensures it behaves as a block-level element for centering
+                borderWidth: 0,
+                  color:"black"
+              }}><p className='protest-guerrilla-regular' style={{fontSize: 30,}}>Pay now</p></Button> : ""}
 
             </div>
 
@@ -481,6 +488,7 @@ export default function CartPage() {
 
 
 
+        </div>
         </div>
       }
 

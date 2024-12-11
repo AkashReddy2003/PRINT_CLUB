@@ -275,6 +275,9 @@ input:focus{
   .proddiv{
     visibility: hidden;
   }
+  .footerlogo{
+    font-size: 80px;
+  }
 }
 @media screen and (min-width:769px) {
   #navbar{
@@ -352,6 +355,9 @@ input:focus{
   }
   .filterchips{
     flex-direction: row;
+  }
+  .footerlogo{
+    font-size: 150px;
   }
   
   

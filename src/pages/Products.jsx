@@ -15,6 +15,9 @@ import { Button } from '@mui/joy';
 import Checkbox from '@mui/joy/Checkbox';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
+import {FormLabel,FormHelperText,Select,Option,Grid} from '@mui/joy';
+import { color } from 'framer-motion';
+
 export default function Products() {
  
   const {data}=useContext(GloabalContext);
@@ -72,6 +75,7 @@ export default function Products() {
 
 
      </div>
+     
     <ProductList data={Data}/>
     <Modal
         aria-labelledby="modal-title"

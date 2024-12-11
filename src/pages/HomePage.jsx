@@ -93,7 +93,7 @@ export default function HomePage() {
           <div  style={{height:2,backgroundColor:"black",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"black",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"#FFF8E8",display:"flex",flexDirection:"row",
 
-          }} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Sticker",collection:""}})}>Shop now 
+          }} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Poster",collection:""}})}>Shop now 
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -126,7 +126,7 @@ export default function HomePage() {
           <div  style={{width:500,height:2,backgroundColor:"#FFF8E8",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"#FFF8E8",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"black",display:"flex",flexDirection:"row",
 
-          }}>Shop now 
+          }} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Sticker",collection:""}})}>Shop now 
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>
@@ -138,7 +138,7 @@ export default function HomePage() {
           <div  style={{height:2,backgroundColor:"#FFF8E8",marginBottom:50}}></div>
           <button className='poppins-medium' style={{backgroundColor:"#FFF8E8",padding:20,fontSize:14,paddingLeft:40,paddingRight:40,color:"black",display:"flex",flexDirection:"row",
 
-          }}>Shop now 
+          }} onClick={()=>navigate(`/product/Store/collection`,{state:{store:"Sticker",collection:""}})}>Shop now 
           <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>

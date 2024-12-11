@@ -115,7 +115,7 @@ export default function Main() {
      </div>
      </div>
    
-   <p style={{fontSize: 150,alignSelf:"center"}} className='protest-guerrilla-regular'>PRINT CLUB</p>
+   <p style={{alignSelf:"center"}} className='protest-guerrilla-regular footerlogo'>PRINT CLUB</p>
    <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",padding:20}}>
      <p className='poppins-medium'>© PRINT CLUB 2024</p>
      <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>

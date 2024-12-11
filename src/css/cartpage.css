@@ -43,14 +43,14 @@
         width: 30vw;
         text-align: left;
         margin: 30px;
-        border-radius: 20px;
+        border-radius: 0px;
         display: flex;
         
         flex-direction: column;
     }
 
     .carttag{
-        color: #FFF8E8;
+        color: black;
         
         
         
@@ -59,7 +59,7 @@
         
     }
     .carttag1{
-        color: #FFF8E8;
+        color: black;
         
         
         margin-left: 30px;
@@ -69,11 +69,13 @@
     }
 
     .cc{
-        background-color: black;
+        display: flex;
+        flex-direction: column;
         padding: 20px;
-        border-radius: 20px;
-        justify-content: center;
-        align-items: center;
+        border-radius: 0px;
+        
+        border-width: 2px;
+        border-color: black;
     }
 
     .checkout{
@@ -87,6 +89,21 @@
         display: none !important;
     }
 
+
+
+
+
+    .cmain{
+        min-height: 50vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .chead{
+        font-size: 80px;
+    }
 }
 
 @media screen and (max-width:769px) {
@@ -134,41 +151,44 @@
     }
 
     .cartcheck{
-        width: 85vw;
+        width: 90vw;
         text-align: left;
         margin: 30px;
-        border-radius: 20px;
+        border-radius: 0px;
         display: flex;
         
         flex-direction: column;
     }
 
     .carttag{
-        color: #FFF8E8;
+        color: black;
+        padding: 5px;
         
         
-        
-        font-size: 25px;
+        font-size: 20px;
         
         
     }
     .carttag1{
-        color: #FFF8E8;
-        
+        color: black;
+        padding: 5px;
         
         margin-left: 30px;
-        font-size: 25px;
+        font-size: 20px;
         
         
     }
 
     .cc{
-        background-color: black;
-        padding: 20px;
-        border-radius: 20px;
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        border-radius: 0px;
+        
+        border-width: 2px;
+        border-color: black;
     }
+
 
     .checkout{
         width: 80vw;
@@ -179,5 +199,20 @@
     }
     .checkoutpc{
         display: none !important;
+    }
+
+
+
+    .cmain{
+        min-height: 50vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .chead{
+        
+        font-size: 40px;
     }
 }
