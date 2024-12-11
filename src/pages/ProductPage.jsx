@@ -13,6 +13,7 @@ import Offerimg from"../assets/img/offerimg.webp";
 import StickerFooter from '../components/StickerFooter';
 import ProductList from '../components/ProductList';
 import "../css/Productpage.css"
+import PosterFooter from '../components/PosterFooter';
 export default function ProductPage() {
  
     const {data,cart,setCart,addtocart}=useContext(GloabalContext);
@@ -132,7 +133,8 @@ Transform your everyday items into unique expressions of style with these durabl
       
         </div>
       </div>
-      <StickerFooter/>
+      {d.store=="Sticker"?<StickerFooter/>:<PosterFooter/>}
+      
       <div style={{width: "100vw",backgroundColor: "black",textAlign:"left",}}>
       <h1 className='protest-guerrilla-regular' style={{ color: "#FFF8E8", fontSize: 30,paddingLeft:100,paddingTop:50 }}>Similar Products</h1>
       <ProductList data={dat}/>
