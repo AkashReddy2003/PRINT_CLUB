@@ -11,7 +11,7 @@ import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
-import { Button } from '@mui/joy';
+import { Button, FormControl ,} from '@mui/joy';
 import Checkbox from '@mui/joy/Checkbox';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
@@ -46,9 +46,9 @@ export default function Products() {
   useEffect(()=>{
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
-      let a=data.filter((i)=>(((i.collection==collection||collection=="")&&(i.store==store||store=="")&&(i.tags.some(x=>tags.includes(x))||tags.length==0))?true:false));
+      let a=data.filter((i)=>(((i.collection==collection||collection==""||collection=="All")&&(i.store==store||store==""||store=="All")&&(i.tags.some(x=>tags.includes(x))||tags.length==0))?true:false));
       let x=[];
-      data.map((i)=>{i.tags.map((it)=>x.includes(it)?"":x.push(it))});
+      data.map((i)=>{i.tags.map((it)=>(!x.includes(it)&&(i.store==store||store==""||store=="All")&&(i.collection==collection||collection==""||collection=="All"))?x.push(it):"")});
       setTagslist(x.sort());
       setData(a);
       
@@ -61,20 +61,52 @@ export default function Products() {
     <div style={{backgroundColor: "black",width: "100vw",}}>
      <p className='poppins-medium' style={{color:"#FFF8E8",textAlign:"left",padding:20,paddingLeft:window.screen.width>1300?50:0}}>{store+" → "+collection}</p>
      <p style={{textAlign:"left",color:"#FFF8E8",paddingLeft:window.screen.width>1300?50:20}} className='protest-guerrilla-regular productshead'>{collection!=""?collection:"All"}<span style={{fontSize:30}}>  {Data.length}</span></p>
-     <div className='filterchips' style={{width: "100vw",display:"flex",paddingLeft:0,alignItems:"center",justifyContent:"center"}}>
-      
-<Button className='poppins-medium' color="success" label="FILTERS" style={{backgroundColor: "#FFF8E8",color:"black"}} onClick={()=>setOpen(true)}>Filter</Button>
-<div className='proddiv' style={{height:30,width: 3,backgroundColor: "#FFF8E8",marginLeft:20,marginRight: 20,}}></div>
+     <div style={{width:"100%",display:"flex",justifyContent:"center"}}>
+     <FormControl style={{ margin: 10, width:"30vw"}}>
+                      <FormLabel style={{ color: "#FFF8E8" }}>Store</FormLabel>
+                      <Select placeholder={store?store:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
+                        setStore(newValue)
+                      }}>
+                        
+                            <Option value={"All"}>All</Option>
+                            <Option value={"Sticker"}>Sticker</Option>
+                            <Option value={"Poster"}>Poster</Option>
+                          
 
-{collection!=""&&<Chip variant="outlined" onDelete={()=>{setCollection("")}} label={collection} style={{marginRight: 20,color:"#FFF8E8"}} deleteIcon={<ClearIcon style={{color:"#FFF8E8"}} onClick={()=>setCollection("")}/>}/>}
-{store!=""&&<Chip variant="outlined" onDelete={()=>{setStore("")}} label={store} style={{marginRight: 20,color:"#FFF8E8"}} deleteIcon={<ClearIcon style={{color:"#FFF8E8"}}/>}/>}
-{tags.length>0?tags.map((a)=><Chip variant="outlined" onDelete={()=>{setTags(tags.filter((x)=>x!=a))}} label={a} style={{marginRight: 20,color:"#FFF8E8"}} deleteIcon={<ClearIcon style={{color:"#FFF8E8"}} onClick={()=>setCollection("")}/>}/>):""}
+                      </Select>
+                    </FormControl>
+                    <FormControl style={{ margin: 10,width:"30vw" }}>
+                      <FormLabel style={{ color: "#FFF8E8" }}>Collection</FormLabel>
+                      <Select placeholder={collection?collection:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
+                        setCollection(newValue)
+                      }}>
+                        <Option value={"All"}>All</Option>
+                        {collectionlist.map((a)=>
+                          <Option value={a}>{a}</Option>
+                        )}
+                            
+                            
+                          
 
+                      </Select>
+                    </FormControl>
+                    <FormControl style={{ margin: 10,width:"30vw" }}>
+                      <FormLabel style={{ color: "#FFF8E8" }}>Tags</FormLabel>
+                      <Select placeholder={tags?tags:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
+                        setTags(newValue)
+                      }} multiple>
+                        
+                        {tagslist.map((a)=>
+                          <Option value={a}>{a}</Option>
+                        )}
+                            
+                            
+                          
 
-
-
-
+                      </Select>
+                    </FormControl>
      </div>
+     
      
     <ProductList data={Data}/>
     <Modal
