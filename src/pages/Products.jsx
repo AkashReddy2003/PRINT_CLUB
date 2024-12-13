@@ -23,11 +23,12 @@ export default function Products() {
   const {data}=useContext(GloabalContext);
   const [Data,setData]=useState([]);
   const location=useLocation();
-  const [store,setStore]=useState(location.state.store);
-  const [collection,setCollection]=useState(location.state.collection);
+  const [store,setStore]=useState(location.state?location.state.store:"");
+  const [collection,setCollection]=useState(location.state?location.state.collection:"");
   const [tags,setTags]=useState([]);
   const [tagslist,setTagslist]=useState([]);
   const [open, setOpen] = React.useState(false);
+  
   let collectionlist=[
     "Movies & Series",
     "Sports",
@@ -46,7 +47,7 @@ export default function Products() {
   useEffect(()=>{
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
-      let a=data.filter((i)=>(((i.collection==collection||collection==""||collection=="All")&&(i.store==store||store==""||store=="All")&&(i.tags.some(x=>tags.includes(x))||tags.length==0))?true:false));
+      let a=data.filter((i)=>(((i.collection==collection||collection==""||collection=="All")&&(i.store==store||store==""||store=="All")&&(i.tags.some(x=>tags.includes(x))||tags.length==0||tags.includes("All")))?true:false));
       let x=[];
       data.map((i)=>{i.tags.map((it)=>(!x.includes(it)&&(i.store==store||store==""||store=="All")&&(i.collection==collection||collection==""||collection=="All"))?x.push(it):"")});
       setTagslist(x.sort());
@@ -56,12 +57,13 @@ export default function Products() {
    
     
   },[data,collection,store,tags])
+  
 
   return (
     <div style={{backgroundColor: "black",width: "100vw",}}>
      <p className='poppins-medium' style={{color:"#FFF8E8",textAlign:"left",padding:20,paddingLeft:window.screen.width>1300?50:0}}>{store+" → "+collection}</p>
      <p style={{textAlign:"left",color:"#FFF8E8",paddingLeft:window.screen.width>1300?50:20}} className='protest-guerrilla-regular productshead'>{collection!=""?collection:"All"}<span style={{fontSize:30}}>  {Data.length}</span></p>
-     <div style={{width:"100%",display:"flex",justifyContent:"center"}}>
+     <div style={{width:"100%",display:"flex",justifyContent:"center",marginBottom: 20,}}>
      <FormControl style={{ margin: 10, width:"30vw"}}>
                       <FormLabel style={{ color: "#FFF8E8" }}>Store</FormLabel>
                       <Select placeholder={store?store:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
@@ -92,9 +94,10 @@ export default function Products() {
                     </FormControl>
                     <FormControl style={{ margin: 10,width:"30vw" }}>
                       <FormLabel style={{ color: "#FFF8E8" }}>Tags</FormLabel>
-                      <Select placeholder={tags?tags:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
+                      <Select placeholder={tags.length!=0?tags:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
                         setTags(newValue)
                       }} multiple>
+                        <Option value={"All"}>All</Option>
                         
                         {tagslist.map((a)=>
                           <Option value={a}>{a}</Option>
@@ -223,6 +226,7 @@ export default function Products() {
         
       
       </Modal>
+      
     </div>
   )
 }
