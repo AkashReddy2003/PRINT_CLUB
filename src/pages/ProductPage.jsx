@@ -14,11 +14,13 @@ import StickerFooter from '../components/StickerFooter';
 import ProductList from '../components/ProductList';
 import "../css/Productpage.css"
 import PosterFooter from '../components/PosterFooter';
+import log from "../assets/img/logo.webp"
 export default function ProductPage() {
  
     const {data,cart,setCart,addtocart}=useContext(GloabalContext);
     const {productid}=useParams();
    const [dat,setDat]=useState([]);
+   const [imgload,setImgload]=useState(true);
     const [d,setD]=useState({});
     const [quantity,setQuantity]=useState(1);
     useEffect(()=>{
@@ -26,7 +28,7 @@ export default function ProductPage() {
       let d=data.filter((a)=>a.id==productid?true:false)[0];
       setD(d)
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      let Data=data.filter((i)=>((i.collection==d.collection&&i.store==d.store)?true:false));
+      let Data=data.filter((i)=>((i.collection==d.collection&&i.store==d.store&&i.tags.some(x=>d.tags.includes(x)))?true:false));
       setDat(Data);
     },[productid])
     
@@ -34,7 +36,8 @@ export default function ProductPage() {
     <div>
       <div className='item' style={{width: "100vw",display:"flex",backgroundColor:"black",position: "relative",gap:70}}>
         <div className='item1' style={{width: "100%",display:"flex",alignItems:"center",justifyContent:"center",backgroundColor: "#FFF8E8",top:0}}>
-        <img className='itemimg' src={d.image} />
+        <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)}/>
+        
         </div>
         
         <div className='item2' style={{color:"#FFF8E8",textAlign:"left",}}>
@@ -93,7 +96,7 @@ Transform your everyday items into unique expressions of style with these durabl
           id="panel2-header"
           style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: window.screen.width>1300?50:20,paddingBottom:window.screen.width>1300?50:0}}
         >
-          <Typography  style={{fontSize: 20,}}><h1 className='protest-guerrilla-regular'>Service policy</h1></Typography>
+          <Typography  style={{fontSize: 20,}}><h1 className='protest-guerrilla-regular'>Service and Refund policy</h1></Typography>
         </AccordionSummary>
         <AccordionDetails style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: 50,}}>
           <Typography >
@@ -117,11 +120,22 @@ Transform your everyday items into unique expressions of style with these durabl
           </ul>
 
           <br/>
+          <span style={{fontWeight: 'bold',}}>Refund Policy: </span>
+          <br/>
+          <ul>
+            <li>‣ We strive for 100% customer satisfaction. If you are not satisfied with your purchase, you can request a refund under the following conditions.</li>
+<li>‣ Eligibility: Refunds are applicable for defective or damaged products only.</li>
+<li>‣ Process: Email us your order details within 7 days of delivery.</li>
+<li>‣ After approval, refunds will be initiated within 5-7 working days. The amount will be credited to your bank account or original payment method.</li>
+<li>‣ Mail us to cancel order before dispatch. Once dispatched, cancellations are not allowed.</li>
+          </ul>
+
+          <br/>
           <span style={{fontWeight: 'bold',}}>Customer Support: </span>
           <br/>
           <ul>
-            <li>‣ If you have any questions or need assistance, please reach out to our customer support team at [Email] or [Phone Number].</li>
-<li>‣ Our support hours are [Insert Business Hours] (Time Zone).</li>
+            <li>‣ If you have any questions or need assistance, please reach out to our customer support team at printclubworld@gmail.com or 9398000816.</li>
+<li>‣ Our support hours are 8AM to 10PM IST.</li>
           </ul>
           </p>
 

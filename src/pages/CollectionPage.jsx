@@ -20,9 +20,9 @@ export default function CollectionPage() {
       { name: "Movies & Series", img: mos },
       { name: "Sports", img: spo },
         { name: "Gaming", img: gam },
-        { name: "Nature & Travel", img: nat },
+        
         { name: "Music", img: mus },
-        { name: "Art & Aesthetics", img: art },
+        
         { name: "Comics & Anime", img: anim },
         { name: "Quotes & Typography", img: quo },
         { name: "Space & Sci-Fi", img: spa },

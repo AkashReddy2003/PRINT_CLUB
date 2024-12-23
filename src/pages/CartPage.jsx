@@ -185,7 +185,7 @@ export default function CartPage() {
   useEffect(() => {
     console.log(cart)
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [cart, pos])
+  }, [pos])
 
   const getPincodeData = async (a) => {
     await axios.get("https://api.postalpincode.in/pincode/" + a).then((res) => {

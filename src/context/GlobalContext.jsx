@@ -3,6 +3,7 @@ import jw1 from "../assets/img/stickers/bb_01.png"
 import { app } from '../config/FirebaseConfig';
 import { getDatabase,push,ref,set,onValue } from "firebase/database";
 import { json } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 const GloabalContext = createContext();
 
 const MyContextProvider = ({ children }) => {
@@ -30,7 +31,8 @@ const MyContextProvider = ({ children }) => {
       let c=x?x:[];
       console.log(c);
       setCart(c);
-      setData(products);
+
+      setData(products.filter((a)=>a.store=="Poster"?true:false));
       setLoad(false);
       
     })
@@ -39,7 +41,15 @@ const MyContextProvider = ({ children }) => {
     let c=[...cart];
     let p=false;
     console.log(a,quantity);
-    
+    toast.success("Added",{position: "top-right",
+      autoClose: 1900,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: true,
+      
+      theme: "dark",
+      })
     for(let i=0;i<c.length;i++){
       if(c.at(i).product.image==a.image){
        p=true;
@@ -65,7 +75,15 @@ const MyContextProvider = ({ children }) => {
   }
   const deletefromcart=(a)=>{
     let c=[...cart];
-    
+    toast.error("Removed",{position: "top-right",
+      autoClose: 1900,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: true,
+      
+      theme: "dark",
+      })
     c=c.filter((x)=>a!=x.product?true:false);
     setCart(c);
     localStorage.setItem("cart",JSON.stringify(c));
@@ -73,6 +91,15 @@ const MyContextProvider = ({ children }) => {
   }
   
   const storeOrder=async(x)=>{
+    toast.success("Order Success",{position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: true,
+      
+      theme: "dark",
+      })
     return push(ref(db,"orders/"),x);
   }
   useEffect(()=>{
@@ -168,6 +195,8 @@ const MyContextProvider = ({ children }) => {
   return (
     <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart,storeOrder,cartclear}}>
       {children}
+      <ToastContainer 
+/>
     </GloabalContext.Provider>
   );
 };

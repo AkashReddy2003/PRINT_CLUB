@@ -41,3 +41,14 @@
         flex-direction: row;
     }
 }
+
+.loadimg{
+    animation-name: mymove;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mymove {
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+  }

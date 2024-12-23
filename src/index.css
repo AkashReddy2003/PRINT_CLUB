@@ -261,6 +261,9 @@ input:focus{
   .prod{
     width: 90%;
   }
+  .prodimage{
+    padding: 20px;
+  }
 
   #navbar{
     display: none;
@@ -343,6 +346,9 @@ input:focus{
 
   .prod{
     width: 30%;
+  }
+  .prodimage{
+    padding: 20px;
   }
 
 
