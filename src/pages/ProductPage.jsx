@@ -8,13 +8,15 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
-import { Button } from '@mui/material';
+import { Button, Grid2 } from '@mui/material';
 import Offerimg from"../assets/img/offerimg.webp";
 import StickerFooter from '../components/StickerFooter';
 import ProductList from '../components/ProductList';
 import "../css/Productpage.css"
 import PosterFooter from '../components/PosterFooter';
 import log from "../assets/img/logo.webp"
+import blackframe from "../assets/img/stickers/blackframe.png"
+import whiteframe from "../assets/img/stickers/whiteframe.png"
 export default function ProductPage() {
  
     const {data,cart,setCart,addtocart}=useContext(GloabalContext);
@@ -23,6 +25,7 @@ export default function ProductPage() {
    const [imgload,setImgload]=useState(true);
     const [d,setD]=useState({});
     const [quantity,setQuantity]=useState(1);
+    const [type,setType]=useState("normal");
     useEffect(()=>{
       console.log(productid);
       let d=data.filter((a)=>a.id==productid?true:false)[0];
@@ -31,12 +34,53 @@ export default function ProductPage() {
       let Data=data.filter((i)=>((i.collection==d.collection&&i.store==d.store&&i.tags.some(x=>d.tags.includes(x)))?true:false));
       setDat(Data);
     },[productid])
+
+    const getDiscountPrice=()=>{
+      if(type=="normal"){
+        return 79;
+      }else if(type=="sticker"){
+        return 99;
+      }else{
+        return 189;
+      }
+    }
+    const getPrice=()=>{
+      if(type=="normal"){
+        return 199;
+      }else if(type=="sticker"){
+        return 249;
+      }else{
+        return 399;
+      }
+    }
+    const getImg=()=>{
+      if(type=="normal"){
+        return <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)}/>;
+      }else if(type=="sticker"){
+        return <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)}/>;
+      }else if(type=="black"){
+        return(
+          <>
+<img className='itemimgframe' src={blackframe} style={{position: "absolute",}}onLoad={(e)=>setImgload(false)}/>
+<img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)} style={{zIndex:1}}/>
+          </>
+        )
+      }else{
+        return(
+          <>
+<img className='itemimgframe' src={whiteframe} style={{position: "absolute",}}onLoad={(e)=>setImgload(false)}/>
+<img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)} style={{zIndex:1}}/>
+          </>
+        )
+      }
+    }
     
   return (
     <div>
       <div className='item' style={{width: "100vw",display:"flex",backgroundColor:"black",position: "relative",gap:70}}>
         <div className='item1' style={{width: "100%",display:"flex",alignItems:"center",justifyContent:"center",backgroundColor: "#FFF8E8",top:0}}>
-        <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)}/>
+
+        {getImg()}
         
         </div>
         
@@ -44,7 +88,7 @@ export default function ProductPage() {
             <div style={{margin:50,marginTop:0}}>
             <h1 className='protest-guerrilla-regular prodname' style={{fontSize:60}}>{d.name}</h1>
             <h1 className='poppins-medium' style={{fontSize: 20,}}>{d.store+" "+d.collection}</h1>
-            <h1 className='poppins-medium' style={{fontSize: 30,}}><span style={{textDecoration:"line-through",color:"red",marginRight:10}}>{"Rs. "+d.price+".00"}</span>{" Rs. "+d.discountPrice+".00"}</h1>
+            <h1 className='poppins-medium' style={{fontSize: 30,}}><span style={{textDecoration:"line-through",color:"red",marginRight:10}}>{"Rs. "+getPrice()+".00"}</span>{" Rs. "+getDiscountPrice()+".00"}</h1>
         </div>
         <div>
             <div style={{display:"flex",flexDirection:"row", color:"#FFF8E8",marginLeft: 50,width: 200,borderWidth:1,borderColor: "#FFF8E8",overflow:"hidden",justifyContent:"space-between",padding:10}}>
@@ -52,8 +96,46 @@ export default function ProductPage() {
                 <input style={{backgroundColor: "black",color:"#FFF8E8",textAlign:"center",width: 50,}} onChange={(x)=>{setQuantity(x.target.value)}} value={quantity}/>
                 <Button onClick={()=>setQuantity((Number)((Number)(quantity)+1))}><AddIcon/></Button>
             </div>
-            <img src={Offerimg} style={{marginLeft: 50,height: 200,marginTop: 20,}}/>
-            <Button  style={{margin:50,backgroundColor: "#FFF8E8",paddingLeft:20,paddingRight:20,width: "80%",}} onClick={()=>{console.log(d,quantity);addtocart(d,quantity)}}><span className='poppins-medium' style={{fontSize: 20,color:"black"}} >Add to cart</span></Button>
+            <Grid2 container spacing={4}>
+              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
+              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer"}} onClick={()=>setType("normal")}>
+              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,backgroundColor:type=="normal"?"#FFF8E8":"black",}}/>
+              <p>Non Adhesive Paper</p>
+              </div>
+              </Grid2>
+              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
+              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer"}} onClick={()=>setType("sticker")}>
+              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,backgroundColor:type=="sticker"?"#FFF8E8":"black"}}/>
+              <p>Self Adhesive Paper</p>
+              </div>
+              </Grid2>
+              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
+              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer",position: "relative",}} onClick={()=>setType("white")}>
+              <img src={whiteframe} style={{height: 150,marginTop: 20,padding:0,position:"absolute",top:0,backgroundColor:type=="white"?"#FFF8E8":"black"}}/>
+
+              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,zIndex: 0,}}/>
+              <p>With White Frame</p>
+              </div>
+              </Grid2>
+              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
+              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer",position:"relative"}} onClick={()=>setType("black")}>
+              <img src={blackframe} style={{height: 150,marginTop: 20,padding:0,position:"absolute",top:0,backgroundColor:type=="black"?"#FFF8E8":"black"}}/>
+
+              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,zIndex: 0,}}/>
+              <p>With Black Frame</p>
+              </div>
+              </Grid2>
+              
+
+            </Grid2>
+           
+            
+            <Button  style={{margin:50,backgroundColor: "#FFF8E8",paddingLeft:20,paddingRight:20,width: "80%",}} onClick={()=>{console.log(d,quantity);
+            let x=d;
+            x.discountPrice=getDiscountPrice();
+            x.price=getPrice();
+            x.type=type;
+              addtocart(x,quantity)}}><span className='poppins-medium' style={{fontSize: 20,color:"black"}} >Add to cart</span></Button>
             <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon style={{color:"#FFF8E8"}}/>}

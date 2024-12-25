@@ -9,7 +9,18 @@ import '../css/cartitem.css'
 export default function CartItem({a}) {
     const [quantity,setQuantity]=useState(a.quantity);
     const {cart,setCart,addtocart,deletefromcart}=useContext(GloabalContext); 
-    const navigate=useNavigate();       
+    const navigate=useNavigate();  
+    const getType=()=>{
+      if(a.product.type=="normal"){
+        return "Non Adhesive";
+      }else if(a.product.type=="sticker"){
+        return "Self Adhesive";
+      }else if(a.product.type=="black"){
+        return "Black Frame";
+      }else{
+        return "White Frame";
+      }
+    }     
     return(<>
     <div style={{backgroundColor:"black",width: "80%",height: 2,}}></div>
     <div className='citempc' style={{display:"flex",flexDirection:"row",width: "80%",height:"auto"}}>
@@ -18,7 +29,7 @@ export default function CartItem({a}) {
             <Button onClick={()=>{deletefromcart(a.product,quantity-1)}} style={{position: "absolute",left:"4vw"}}><DeleteIcon style={{color:"red"}}/></Button>
                 <h1 className='protest-guerrilla-regular ' style={{color:"black",fontSize:40,textAlign:"left",marginLeft: 10,}}>{a.product.name}</h1>
                 <p className='poppins-medium ' style={{color:"black",fontSize:20,textAlign:"left",marginLeft: 10,}}>{"Rs. "+Number(a.product.discountPrice)+" * "+quantity+" = Rs."+a.product.discountPrice*quantity}</p>
-                <p className='poppins-medium ' style={{color:"grey",fontSize:20,textAlign:"left",marginLeft: 10,}}>{"Size | "}{a.product.store=="Poster"?"A4":"3 in*3 in"}</p>
+                <p className='poppins-medium ' style={{color:"grey",fontSize:20,textAlign:"left",marginLeft: 10,}}>{"Size | "}{a.product.store=="Poster"?"A4"+" | "+getType():"3 in*3 in"}</p>
                 <p className='poppins-medium ' style={{color:"grey",fontSize:20,textAlign:"left",marginLeft: 10,}}>{a.product.store+" | "+a.product.collection}</p>
                 
                 <div style={{width: 200,alignSelf:"flex-start"}}>
@@ -40,7 +51,7 @@ export default function CartItem({a}) {
         <div style={{width: "100%",justifyContent:"flex-start",padding:20}}>
                 <h1 className='protest-guerrilla-regular ' style={{color:"black",fontSize:20,textAlign:"left",marginLeft: 10,}}>{a.product.name}<Button onClick={()=>{deletefromcart(a.product,quantity-1)}} style={{marginLeft: 0,}}><DeleteIcon style={{color:"red"}}/></Button></h1>
                 <p className='poppins-medium ' style={{color:"black",fontSize:20,textAlign:"left",marginLeft: 10,}}>{"Rs. "+Number(a.product.discountPrice)+" * "+quantity+" = Rs."+a.product.discountPrice*quantity}</p>
-                <p className='poppins-medium ' style={{color:"grey",fontSize:20,textAlign:"left",marginLeft: 10,}}>{"Size | "}{a.product.store=="Poster"?"A4":"3 in*3 in"}</p>
+                <p className='poppins-medium ' style={{color:"grey",fontSize:20,textAlign:"left",marginLeft: 10,}}>{"Size | "}{a.product.store=="Poster"?"A4"+" | "+getType():"3 in*3 in"}</p>
                 <p className='poppins-medium ' style={{color:"grey",fontSize:20,textAlign:"left",marginLeft: 10,}}>{a.product.store+" | "+a.product.collection}</p>
                 
                 <div style={{width: 200,alignSelf:"flex-start"}}>

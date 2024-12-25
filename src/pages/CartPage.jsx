@@ -47,7 +47,7 @@ export default function CartPage() {
   );
 
 
-
+const beurl="https://print-club-backend.vercel.app";
 
 
   const loadScript = (src) => {
@@ -81,7 +81,7 @@ export default function CartPage() {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:3000/orders",
+      url: `${beurl}/orders`,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -90,7 +90,7 @@ export default function CartPage() {
     let config2 = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "http://localhost:3000/sendorderconfirmation",
+      url: `${beurl}/sendorderconfirmation`,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -159,7 +159,7 @@ export default function CartPage() {
   }
 
   const paymentFetch = async (a) => {
-    await axios.get(`http://localhost:3000/payment/${a}`)
+    await axios.get(`${beurl}/payment/${a}`)
       .then((response) => {
         console.log(response.data);
         setResponseState(response.data);

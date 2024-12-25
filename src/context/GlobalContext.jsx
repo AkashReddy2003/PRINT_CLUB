@@ -41,26 +41,36 @@ const MyContextProvider = ({ children }) => {
     let c=[...cart];
     let p=false;
     console.log(a,quantity);
-    toast.success("Added",{position: "top-right",
-      autoClose: 1900,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: false,
-      draggable: true,
-      
-      theme: "dark",
-      })
+   
     for(let i=0;i<c.length;i++){
       if(c.at(i).product.image==a.image){
        p=true;
         c.at(i).quantity=quantity;
         setCart(c);
         localStorage.setItem("cart",JSON.stringify(c));
+        toast.success("Updated",{position: "top-right",
+          autoClose: 1900,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: true,
+          
+          theme: "dark",
+          })
         break;
       }
     }
     if(!p){
       c.push({product:a,quantity:quantity});
+      toast.success("Added",{position: "top-right",
+        autoClose: 1900,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: true,
+        
+        theme: "dark",
+        })
       setCart(c);
       localStorage.setItem("cart",JSON.stringify(c));
     }

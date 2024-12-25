@@ -7,6 +7,11 @@
         object-fit: contain;
         padding: 50px;
     }
+    .itemimgframe{
+        height: 57vh;
+        object-fit: contain;
+        padding: 50px;
+    }
     .item1{
 
     }
@@ -28,6 +33,10 @@
     }
     .itemimg{
         height: 70vh;
+        object-fit: contain;
+    }
+    .itemimgframe{
+        height: 83vh;
         object-fit: contain;
     }
     .item1{
