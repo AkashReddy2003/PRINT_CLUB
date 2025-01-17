@@ -27,7 +27,14 @@ import mot4 from "../assets/img/stickers/mot_04.webp"
 import jk1 from "../assets/img/stickers/jk_01.webp"
 import jk2 from "../assets/img/stickers/jk_02.webp"
 
-
+import pos1 from "../assets/pos/40f3b3c0-8758-458b-9e9c-c482b086d04c.webp"
+import pos2 from "../assets/pos/3ad77368-8aa3-4cf4-b240-b52776b00934.webp"
+import pos3 from "../assets/pos/4d237db7-9879-4bac-854d-fa894c9eaffe.webp"
+import pos4 from "../assets/pos/9e2ba5db-d312-4519-a3e8-436b9fec0086.webp"
+import pos5 from "../assets/pos/46e504c4-8c25-49db-822e-13e395343d41.webp"
+import pos6 from "../assets/pos/cdbb0a5f-0f08-47cc-827c-7876f49e3834.webp"
+import pos7 from "../assets/pos/921681f8-af7f-45e7-9276-01702eb49aa4.webp"
+import pos8 from "../assets/pos/a81bda9b-8e2a-43b9-93d0-f21424d90d4e.webp"
 
 
 
@@ -40,10 +47,12 @@ import bg_jk from "../assets/img/bg_jk.webp"
 
 
 import AnimText from './AnimText'
-import { Box } from '@mui/material';
+import { Box, Grid2 } from '@mui/material';
 import BorderAnim from './BorderAnim';
 import { useNavigate } from 'react-router-dom';
 import { GloabalContext } from '../context/GlobalContext';
+import OfferText from '../components/OfferText';
+import ProductList from '../components/ProductList';
 
 
 
@@ -54,13 +63,13 @@ export default function HomePage() {
   const navigate=useNavigate();
   useEffect(()=>{
     let a=data.filter((i)=>i.store=="Poster"?true:false);
-    
-    setD([a[0],a[10],a[90],a[100],a[110],a[112]]);
+    let n=a.length;
+    setD([a[n-1],a[n-2],a[n-3],a[n-4],a[n-5],a[n-6],a[n-7],a[n-8]]);
   },[data])
   return (
     <div id='main'>
       
-      <section className='head' style={{display:"flex", justifyContent:"center",width: "100vw",backgroundColor:"#FFF8E8"}}>
+      <section className='head' style={{display:"flex", justifyContent:"center",width: "100vw",backgroundColor:"#FFF8E8",}}>
         <p className='protest-guerrilla-regular headtitle'  >PRINT CLUB</p>
         <div className='headimg' style={{position:"absolute",flexDirection:"row",top:'30vh',justifyContent:"center"}}>
         
@@ -71,6 +80,25 @@ export default function HomePage() {
         <img src={rag} style={{height: 530,}}/>
         </div>
         <img className='mobheadimg' src={bb} />
+        <div className='mobonly' style={{display:'flex',position:"absolute",alignItems:"center",flexDirection:"column",height:"100vh",width: '100vw',overflow:"hidden"}}>
+        <div style={{display:'flex',justifyContent:"space-around",alignItems:"center",flexDirection:"row"}}>
+        <img className='mobpos' src={pos1}/>
+        <img className='mobpos' src={pos2}/>
+       
+
+</div>
+<div style={{display:'flex',justifyContent:"space-between",alignItems:"center",flexDirection:"row"}}>
+        <img className='mobpos' src={pos3}/>
+        <img className='mobpos' src={pos4}/>
+
+</div>
+<div style={{display:'flex',justifyContent:"space-between",alignItems:"center",flexDirection:"row"}}>
+        <img className='mobpos' src={pos5}/>
+        <img className='mobpos' src={pos6}/>
+
+</div>
+
+        </div>
         
         <p   className='protest-guerrilla-regular headsubtitle'>SINCE 2024</p>
       </section>
@@ -119,31 +147,10 @@ export default function HomePage() {
 
 
       <AnimText>PRINT CLUB #</AnimText>
-      <section style={{justifyContent:"center",alignItems:"center",width:"100vw",backgroundColor:"#FFF8E8",paddingBottom: 100,}}>
-      <p style={{}} className='protest-guerrilla-regular sectiontitle '>Our Products</p>
+      <section style={{justifyContent:"center",alignItems:"center",width:"100vw",backgroundColor:"black",paddingBottom: 20,}}>
+      <p style={{color:"#FFF8E8"}} className='protest-guerrilla-regular sectiontitle '>New Products</p>
 
-        <Grid container spacing={5} style={{alignSelf: 'center',justifyContent:"center",alignItems:"center"}}>
-          {d.map((a)=>
-          <Grid className={window.screen.width>769?"block prod":"prod"}>
-          <div style={{height:350,width: "100%",backgroundColor:"#FFF8E8",justifyContent:"center",alignItems:"center",display:"flex",borderColor: "black",borderWidth: 2,flexDirection:"column"}}>
-          <img src={a.image} className='prodimage' style={{height:250}}/>
-          <br/>
-          <div  style={{width:"100%",height:2,backgroundColor:"black",}}></div>
-          <div style={{justifyContent:"space-between",alignItems:"center",display:"flex",flexDirection:"row",width: "100%",height:"50%"}}>
-              <p className='poppins-medium' style={{color:"black",marginLeft: 20,fontSize:15}}>{a.name}</p>
-              <button onClick={()=>{navigate(`/productpage/${a.id}`)}} className='poppins-medium' style={{marginRight: 20,backgroundColor:"black",padding:10,fontSize:12,paddingLeft:10,paddingRight:10,color:"#FFF8E8",display:"flex",flexDirection:"row"
-
-        }}>
-        <svg style={{alignSelf:"center",marginLeft:10}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-<path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-</svg>
-</button>
-          </div>
-          </div>
-        </Grid>)}
-          
-
-        </Grid>
+        <ProductList data={d} apg={true}/>
 
       </section>
       

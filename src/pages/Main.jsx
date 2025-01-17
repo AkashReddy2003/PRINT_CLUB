@@ -15,6 +15,7 @@ import Sheet from '@mui/joy/Sheet';
 import { GloabalContext } from '../context/GlobalContext';
 import Loading from './Loading';
 import CartPage from './CartPage';
+import TrackOrder from './TrackOrder';
 export default function Main() {
   const {nav}=useParams();
   const navigate=useNavigate();
@@ -42,7 +43,7 @@ export default function Main() {
       <ListItem  disablePadding>
             <ListItemButton>
              
-              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/store")}>Stores</a></ListItemText>
+              <ListItemText onClick={()=>navigate("/store")} ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' >Stores</a></ListItemText>
              
             </ListItemButton>
           </ListItem>
@@ -50,7 +51,7 @@ export default function Main() {
             <ListItemButton>
              
              
-              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/collection")}>Collections</a></ListItemText>
+              <ListItemText onClick={()=>navigate("/collection")} ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' >Collections</a></ListItemText>
            
             </ListItemButton>
           </ListItem>
@@ -58,7 +59,7 @@ export default function Main() {
             <ListItemButton>
              
             
-              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/cart")}>Cart</a></ListItemText>
+              <ListItemText onClick={()=>navigate("/cart")} ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium' >Cart</a></ListItemText>
              
             </ListItemButton>
           </ListItem>
@@ -66,7 +67,7 @@ export default function Main() {
             <ListItemButton>
              
              
-              <ListItemText  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Track Order</a></ListItemText>
+              <ListItemText onClick={()=>navigate("/track")}  ><a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Track Order</a></ListItemText>
             </ListItemButton>
           </ListItem>
         
@@ -95,7 +96,7 @@ export default function Main() {
     <a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/collection")}>Collections</a>
     <a style={{width: "16%",fontSize: 35,}} className='protest-guerrilla-regular' onClick={()=>navigate("/")}>PRINT CLUB</a>
     <a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/cart")}>Cart</a>
-    <a style={{width: "14%",fontSize: 18,}} className='poppins-medium'>Track Order</a>
+    <a style={{width: "14%",fontSize: 18,}} className='poppins-medium' onClick={()=>navigate("/track")}>Track Order</a>
     </div>
 </section>
 <div style={{visibility:open?"hidden":"visible"}}>
@@ -105,6 +106,7 @@ export default function Main() {
 {nav=="product"&&<Products/>}
 {nav=="productpage"&&<ProductPage/>}
 {nav=="cart"&&<CartPage/>}
+{nav=="track"&&<TrackOrder/>}
 </div>
 
 

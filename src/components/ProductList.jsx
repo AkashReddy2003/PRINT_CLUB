@@ -7,7 +7,7 @@ import "../css/productspage.css"
 import { useNavigate } from 'react-router-dom';
 import { GloabalContext } from '../context/GlobalContext';
 import ProductListItem from './ProductListItem';
-export default function ProductList({data}) {
+export default function ProductList({data,apg}) {
     const navigate=useNavigate();
     const {setProd,cart,setCart,addtocart}=useContext(GloabalContext);
     const [currentPage, setCurrentPage] = useState(1);
@@ -38,7 +38,7 @@ export default function ProductList({data}) {
       
 
     </Grid>
-    <div style={{ display: "flex", justifyContent: "center", marginTop: 20 ,paddingBottom: 20,}}>
+    <div style={{  justifyContent: "center", marginTop: 20 ,paddingBottom: 20,display:apg?"none":"flex"}}>
         <button 
           disabled={currentPage === 1}
           onClick={() => {setCurrentPage((prev) => prev - 1);window.scrollTo({ top: 0, behavior: 'smooth' });}}

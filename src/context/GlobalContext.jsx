@@ -43,7 +43,8 @@ const MyContextProvider = ({ children }) => {
     console.log(a,quantity);
    
     for(let i=0;i<c.length;i++){
-      if(c.at(i).product.image==a.image){
+      if(c.at(i).product.image==a.image&&c.at(i).product.type==a.type){
+      console.log(c.at(i).product.type,a.type)
        p=true;
         c.at(i).quantity=quantity;
         setCart(c);

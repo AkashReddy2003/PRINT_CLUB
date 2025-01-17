@@ -16,13 +16,14 @@ import "../css/Productpage.css"
 import PosterFooter from '../components/PosterFooter';
 import log from "../assets/img/logo.webp"
 import blackframe from "../assets/img/stickers/blackframe.png"
+import blackframer from "../assets/img/stickers/blackframer.png"
 import whiteframe from "../assets/img/stickers/whiteframe.png"
 export default function ProductPage() {
  
     const {data,cart,setCart,addtocart}=useContext(GloabalContext);
     const {productid}=useParams();
    const [dat,setDat]=useState([]);
-   const [imgload,setImgload]=useState(true);
+   
     const [d,setD]=useState({});
     const [quantity,setQuantity]=useState(1);
     const [type,setType]=useState("normal");
@@ -55,13 +56,18 @@ export default function ProductPage() {
     }
     const getImg=()=>{
       if(type=="normal"){
-        return <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)}/>;
+        return <img className='itemimg' style={{padding:5}} src={d.image} onLoad={(e)=>setImgload(false)}/>;
       }else if(type=="sticker"){
         return <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)}/>;
       }else if(type=="black"){
         return(
           <>
-<img className='itemimgframe' src={blackframe} style={{position: "absolute",}}onLoad={(e)=>setImgload(false)}/>
+          {d.image.naturalHeight<d.image.naturalWidth?
+        <img className='itemimgframe' src={blackframer} style={{position: "absolute",}}onLoad={(e)=>setImgload(false)}/>:
+        <img className='itemimgframe' src={blackframe} style={{position: "absolute",}}onLoad={(e)=>setImgload(false)}/>  
+        }
+          
+
 <img className='itemimg' src={d.image} onLoad={(e)=>setImgload(false)} style={{zIndex:1}}/>
           </>
         )
@@ -88,7 +94,7 @@ export default function ProductPage() {
             <div style={{margin:50,marginTop:0}}>
             <h1 className='protest-guerrilla-regular prodname' style={{fontSize:60}}>{d.name}</h1>
             <h1 className='poppins-medium' style={{fontSize: 20,}}>{d.store+" "+d.collection}</h1>
-            <h1 className='poppins-medium' style={{fontSize: 30,}}><span style={{textDecoration:"line-through",color:"red",marginRight:10}}>{"Rs. "+getPrice()+".00"}</span>{" Rs. "+getDiscountPrice()+".00"}</h1>
+            <h1 className='poppins-medium' style={{fontSize: 30,}}><span style={{textDecoration:"line-through",color:"red",marginRight:10}}>{"Rs. 199.00"}</span>{" Rs. 79.00"}</h1>
         </div>
         <div>
             <div style={{display:"flex",flexDirection:"row", color:"#FFF8E8",marginLeft: 50,width: 200,borderWidth:1,borderColor: "#FFF8E8",overflow:"hidden",justifyContent:"space-between",padding:10}}>
@@ -96,38 +102,6 @@ export default function ProductPage() {
                 <input style={{backgroundColor: "black",color:"#FFF8E8",textAlign:"center",width: 50,}} onChange={(x)=>{setQuantity(x.target.value)}} value={quantity}/>
                 <Button onClick={()=>setQuantity((Number)((Number)(quantity)+1))}><AddIcon/></Button>
             </div>
-            <Grid2 container spacing={4}>
-              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
-              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer"}} onClick={()=>setType("normal")}>
-              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,backgroundColor:type=="normal"?"#FFF8E8":"black",}}/>
-              <p>Non Adhesive Paper</p>
-              </div>
-              </Grid2>
-              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
-              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer"}} onClick={()=>setType("sticker")}>
-              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,backgroundColor:type=="sticker"?"#FFF8E8":"black"}}/>
-              <p>Self Adhesive Paper</p>
-              </div>
-              </Grid2>
-              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
-              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer",position: "relative",}} onClick={()=>setType("white")}>
-              <img src={whiteframe} style={{height: 150,marginTop: 20,padding:0,position:"absolute",top:0,backgroundColor:type=="white"?"#FFF8E8":"black"}}/>
-
-              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,zIndex: 0,}}/>
-              <p>With White Frame</p>
-              </div>
-              </Grid2>
-              <Grid2 size={{ md: 6, lg: 3, sm:6,xs:6 }}>
-              <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection: 'column',cursor:"pointer",position:"relative"}} onClick={()=>setType("black")}>
-              <img src={blackframe} style={{height: 150,marginTop: 20,padding:0,position:"absolute",top:0,backgroundColor:type=="black"?"#FFF8E8":"black"}}/>
-
-              <img src={d.image} style={{height: 150,marginTop: 20,padding:10,borderColor:"#FFF8E8",borderWidth:1,zIndex: 0,}}/>
-              <p>With Black Frame</p>
-              </div>
-              </Grid2>
-              
-
-            </Grid2>
            
             
             <Button  style={{margin:50,backgroundColor: "#FFF8E8",paddingLeft:20,paddingRight:20,width: "80%",}} onClick={()=>{console.log(d,quantity);

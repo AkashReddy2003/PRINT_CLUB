@@ -15,7 +15,7 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CartItem from '../components/CartItem';
 import cartgif from '../assets/img/cart.gif'
-
+import { ToastContainer, toast } from 'react-toastify';
 import log from "../assets/img/logo.webp"
 import { useNavigate } from 'react-router-dom';
 export default function CartPage() {
@@ -40,11 +40,15 @@ export default function CartPage() {
     cart.reduce((acc, item) => acc + item.product.discountPrice * item.quantity, 0),
     [cart]
   );
+  
+  const pdata=useMemo(()=>calculateFreeAndPayable(cart,79),[cart]);
+  
+  
 
-  const discountTotal = useMemo(() =>
-    cart.reduce((acc, item) => acc + (item.product.price - item.product.discountPrice) * item.quantity, 0),
-    [cart]
-  );
+  
+
+
+
 
 
 const beurl="https://print-club-backend.vercel.app";
@@ -70,7 +74,7 @@ const beurl="https://print-club-backend.vercel.app";
   const createRazorpayOrder = (amount, id) => {
     let data = JSON.stringify({
       "options": {
-        "amount": total * 100,
+        "amount": pdata.totalPrice * 100,
         "currency": "INR"
       },
       "items": cart,
@@ -135,7 +139,7 @@ const beurl="https://print-club-backend.vercel.app";
 
     const options = {
       key: 'rzp_test_cMDdZAoQm51G6f',
-      amount: amount * 100,
+      amount: pdata.totalPrice * 100,
       currency: 'INR',
       name: "PRINT CLUB",
       description: "payment to print club",
@@ -194,6 +198,56 @@ const beurl="https://print-club-backend.vercel.app";
     })
   }
   const navigate = useNavigate();
+  function calculateFreeAndPayable(cart, pricePerItem) {
+    const offers = [
+        { buy: 10, getFree: 8 },
+        { buy: 9, getFree: 7 },
+        { buy: 8, getFree: 6 },
+        { buy: 7, getFree: 5 },
+        { buy: 6, getFree: 4 },
+        {buy:5,getFree:3},
+        { buy: 4, getFree: 2 },
+    ];
+    const offapplied=[];
+    // Get the total quantity from the cart
+    let totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+    let freeItems = 0;
+    let remainingItems = totalQuantity;
+
+    // Apply offers until no more offers can be applied
+    if (remainingItems >= 6) {  // We can apply offers only when we have at least 4 items
+        for (const offer of offers) {
+            if (remainingItems >= offer.buy) {
+                // Calculate how many sets of the offer can be applied
+                const sets = Math.floor(remainingItems / (offer.buy + offer.getFree));
+                
+                // Add the free items for the current offer
+                freeItems += sets * offer.getFree;
+                if(sets>0){
+                  offapplied.push({...offer,sets});
+                }
+                
+                // Subtract the used items (both the paid and free items)
+                remainingItems -= sets * (offer.buy + offer.getFree);
+            }
+        }
+    }
+
+    // Total payable items
+    const payableItems = totalQuantity - freeItems;
+
+    // Calculate the total price for the payable items
+    const totalPrice = payableItems * pricePerItem;
+console.log(freeItems,payableItems,totalPrice);
+    return {
+        freeItems,
+        payableItems,
+        totalPrice,
+        totalQuantity,
+        offapplied
+    };
+}
   return (
     <>
       {cart.length == 0 ?
@@ -445,20 +499,31 @@ const beurl="https://print-club-backend.vercel.app";
             <div className='cc'>
               <h1 style={{alignSelf:"center",fontSize:30,width: "100%",marginBottom: 10,marginLeft: 10,}} className='protest-guerrilla-regular'>ORDER SUMMARY</h1>
               <div style={{ width: "100%", height: 2, backgroundColor: "black", display: "flex" }} />
-              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40 }}><span className='carttag poppins-medium'>Subtotal </span><span className='carttag1 poppins-medium'>{"Rs. " + Number(total + discountTotal)}</span></p>
-              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 10 }}><span className='carttag poppins-medium'>Discount </span><span className='carttag1 poppins-medium' style={{ color: "red" }}>{"- Rs. " + discountTotal}</span></p>
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40 }}><span className='carttag poppins-medium'>Subtotal </span><span className='carttag1 poppins-medium'>{"Rs. " + Number(pdata.totalQuantity*199)}</span></p>
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 0 }}><span className='carttag poppins-medium'>Discount </span><span className='carttag1 poppins-medium' style={{ color: "red" }}>{"- Rs. " + Number(pdata.totalQuantity*199-pdata.totalQuantity*79)}</span></p>
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 0 }}><span className='carttag poppins-medium'>Free items{"("+pdata.freeItems+")"} </span><span className='carttag1 poppins-medium' style={{ color: "red" }}>{"- Rs. " + Number(pdata.freeItems*79)}</span></p>
+              <p  style={{ display: "flex", flexDirection: "row",justifyContent:"space-around", height: 40, marginBottom: 0 }}>{pdata.offapplied.map((a)=><p>{"Buy "+a.buy+" Get "+a.getFree+" * "+a.sets}</p>)}</p>
               <div style={{ width: "100%", height: 2, backgroundColor: "black", display: "flex" }} />
-              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 0 }}><span className='carttag poppins-medium'>Grand total </span><span className='carttag1 poppins-medium' style={{ color: "green" }}>{"Rs. " + total}</span></p>
+              <p style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", height: 40, marginBottom: 0 }}><span className='carttag poppins-medium'>Grand total{"("+pdata.payableItems+"+"+pdata.freeItems+")"} </span><span className='carttag1 poppins-medium' style={{ color: "green" }}>{"Rs. " + pdata.totalPrice}</span></p>
               <div style={{ width: "100%", height: 2, backgroundColor: "black", display: "flex" }} />
               {pos == "cart" ?
                 <Button variant="outlined"
                 
                 onClick={() => {
-                  if (total >= 225) {
+                  if (pdata.payableItems >= 4) {
                     setPos("checkout")
                   } else {
-                    let n = (225 - total) / 15;
-                    alert("Add " + n + " more stickers to checkout");
+                    let n = (4 - pdata.payableItems) ;
+                    toast.error("Add " + Math.ceil(n) + " more posters to checkout",{position: "top-right",
+                          autoClose: 1900,
+                          hideProgressBar: false,
+                          closeOnClick: false,
+                          pauseOnHover: false,
+                          draggable: true,
+                          
+                          theme: "dark",
+                          })
+                   
 
                   }
                 }} style={{
@@ -484,6 +549,7 @@ const beurl="https://print-club-backend.vercel.app";
             </div>
 
           </div>
+          
 
 
 

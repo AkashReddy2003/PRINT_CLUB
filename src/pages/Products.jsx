@@ -71,7 +71,7 @@ export default function Products() {
                       }}>
                         
                             <Option value={"All"}>All</Option>
-                            <Option value={"Sticker"}>Sticker</Option>
+                            
                             <Option value={"Poster"}>Poster</Option>
                           
 

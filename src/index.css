@@ -183,10 +183,15 @@ input:focus{
     width: 90vw;
     line-height: 0.8;
     margin-top: 100px;
+    z-index: 2;
+    animation-name: textcolor;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
   }
 
   .headimg{
     display: none;
+    z-index: 3;
   }
 
   .headsubtitle{
@@ -205,6 +210,7 @@ input:focus{
     height: 500px;
     position: absolute;
     top: 300px;
+    z-index: 3;
   }
 
   .parallax{
@@ -281,8 +287,29 @@ input:focus{
   .footerlogo{
     font-size: 80px;
   }
+  .loadingimg{
+    height: 160px;
+  }
+  .mobpos{
+    position: relative;
+    width: 120px;
+    margin: 35px;
+
+  }
+  
+  @keyframes textcolor {
+    0%   {color:dodgerblue; }
+  20%  {color:cadetblue; }
+  40%  {color:crimson; }
+  60%  {color:darkcyan; }
+  80% {color:black; }
+  100% {color:dodgerblue; }
+  }
 }
 @media screen and (min-width:769px) {
+  .mobonly{
+    display: none !important;
+  }
   #navbar{
     display: block;
   }
@@ -291,10 +318,12 @@ input:focus{
   }
   .headtitle{
     font-size: 200px;
+    z-index: 2;
   }
 
   .headimg{
     display: flex;
+    z-index: 3;
   }
   .mobheadimg{
    display: none; 

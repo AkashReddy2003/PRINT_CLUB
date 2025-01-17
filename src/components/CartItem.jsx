@@ -35,7 +35,7 @@ export default function CartItem({a}) {
                 <div style={{width: 200,alignSelf:"flex-start"}}>
                 <Button onClick={()=>{quantity>1?setQuantity(quantity-1):"";quantity>1?addtocart(a.product,quantity-1):"";quantity==1?"":""}} style={{}}><RemoveIcon style={{color:"black"}}/></Button>
                   <input style={{color:"black",backgroundColor:"#FFF8E8",textAlign:"center",width: 50,}} onChange={(x)=>{setQuantity(x.target.value);x.target.value?addtocart(a.product,x.target.value):""}} value={quantity}/>
-                  <Button onClick={()=>{setQuantity((Number)((Number)(quantity)+1));addtocart(a.product,quantity+1)}}><AddIcon style={{color:"black"}}/></Button>
+                  <Button onClick={()=>{setQuantity((Number)((Number)(quantity)+1));addtocart(a.product,Number(quantity)+1)}}><AddIcon style={{color:"black"}}/></Button>
                   
                 </div>
                 
