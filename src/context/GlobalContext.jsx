@@ -229,7 +229,7 @@ const MyContextProvider = ({ children }) => {
   //   },
   // ]
   return (
-    <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart,storeOrder,cartclear,getOrderStatus}}>
+    <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart,storeOrder,cartclear,getOrderStatus,setLoad}}>
       {children}
       <ToastContainer 
 />

@@ -19,7 +19,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import log from "../assets/img/logo.webp"
 import { useNavigate } from 'react-router-dom';
 export default function CartPage() {
-  const { cart, setCart, addtocart, deletefromcart, storeOrder, cartclear } = useContext(GloabalContext);
+  const { cart, setCart, addtocart, deletefromcart, storeOrder, cartclear ,setLoad} = useContext(GloabalContext);
   const [responseId, setResponseId] = useState("");
   const [responseState, setResponseState] = useState("");
   const [pos, setPos] = useState("cart");
@@ -146,7 +146,8 @@ const beurl="https://print-club-backend.vercel.app";
       image: log,
       handler: async (response) => {
         setResponseId(response.razorpay_payment_id);
-        await paymentFetch(response.razorpay_payment_id);
+        setLoad(true);
+        await paymentFetch(response.razorpay_payment_id).then(()=>setLoad(false));
       },
       prefill: {
         name: address.full,
