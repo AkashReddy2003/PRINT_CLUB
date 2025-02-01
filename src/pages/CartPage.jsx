@@ -138,7 +138,7 @@ const beurl="https://print-club-backend.vercel.app";
     }
 
     const options = {
-      key: 'rzp_live_1Pud55H3Uxl4qn',
+      key: 'rzp_test_9nywBJKghDrpUL',//rzp_live_1Pud55H3Uxl4qn
       amount: pdata.totalPrice * 100,
       currency: 'INR',
       name: "PRINT CLUB",
