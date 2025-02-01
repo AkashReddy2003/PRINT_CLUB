@@ -130,7 +130,7 @@ const beurl="https://print-club-backend.vercel.app";
       alert("Add " + n + " more stickers to checkout");
       return;
     }
-    const res = await loadScript("https:/checkout.razorpay.com/v1/checkout.js")
+    const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
 
     if (!res) {
       alert("Some error at razorpay screen loading")
