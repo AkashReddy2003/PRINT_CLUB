@@ -138,7 +138,7 @@ const beurl="https://print-club-backend.vercel.app";
     }
 
     const options = {
-      key: 'rzp_test_cMDdZAoQm51G6f',
+      key: 'rzp_live_1Pud55H3Uxl4qn',
       amount: pdata.totalPrice * 100,
       currency: 'INR',
       name: "PRINT CLUB",
@@ -149,8 +149,8 @@ const beurl="https://print-club-backend.vercel.app";
         await paymentFetch(response.razorpay_payment_id);
       },
       prefill: {
-        name: "PRINT CLUB",
-        email: "printclubworld@gmail.com"
+        name: address.full,
+        email: address.email
       },
       theme: {
         color: "#000000"

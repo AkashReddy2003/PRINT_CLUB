@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import jw1 from "../assets/img/stickers/bb_01.png"
 import { app } from '../config/FirebaseConfig';
-import { getDatabase,push,ref,set,onValue } from "firebase/database";
+import { getDatabase,push,ref,set,onValue, query, orderByChild, equalTo, get } from "firebase/database";
 import { json } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 const GloabalContext = createContext();
@@ -113,6 +113,31 @@ const MyContextProvider = ({ children }) => {
       })
     return push(ref(db,"orders/"),x);
   }
+
+  const getOrderStatus=async(orderid)=>{
+    const orderRef =ref(db, 'orders');
+    const q = query(orderRef, orderByChild("id"), equalTo(orderid));
+    const snapshot = await get(q);
+
+        if (snapshot.exists()) {
+            // Return the fetched data
+            let k=Object.keys(snapshot.val())[0];
+            console.log("Data:", snapshot.val()[k]);
+
+            return snapshot.val()[k];
+        } else {
+          toast.error("Invalid OrderID",{position: "top-right",
+            autoClose: 1900,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            
+            theme: "dark",
+            })
+            return null;
+        }
+  }
   useEffect(()=>{
 
     getData();
@@ -204,7 +229,7 @@ const MyContextProvider = ({ children }) => {
   //   },
   // ]
   return (
-    <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart,storeOrder,cartclear}}>
+    <GloabalContext.Provider value={{ myState, setMyState,data,prod,setProd,load ,cart,setCart,addtocart,deletefromcart,storeOrder,cartclear,getOrderStatus}}>
       {children}
       <ToastContainer 
 />

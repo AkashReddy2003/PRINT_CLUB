@@ -27,14 +27,14 @@ import mot4 from "../assets/img/stickers/mot_04.webp"
 import jk1 from "../assets/img/stickers/jk_01.webp"
 import jk2 from "../assets/img/stickers/jk_02.webp"
 
-import pos1 from "../assets/pos/40f3b3c0-8758-458b-9e9c-c482b086d04c.webp"
-import pos2 from "../assets/pos/3ad77368-8aa3-4cf4-b240-b52776b00934.webp"
-import pos3 from "../assets/pos/4d237db7-9879-4bac-854d-fa894c9eaffe.webp"
-import pos4 from "../assets/pos/9e2ba5db-d312-4519-a3e8-436b9fec0086.webp"
-import pos5 from "../assets/pos/46e504c4-8c25-49db-822e-13e395343d41.webp"
-import pos6 from "../assets/pos/cdbb0a5f-0f08-47cc-827c-7876f49e3834.webp"
-import pos7 from "../assets/pos/921681f8-af7f-45e7-9276-01702eb49aa4.webp"
-import pos8 from "../assets/pos/a81bda9b-8e2a-43b9-93d0-f21424d90d4e.webp"
+import pos1 from "../assets/pos/40f3b3c0-8758-458b-9e9c-c482b086d04c.jpg"
+import pos2 from "../assets/pos/3ad77368-8aa3-4cf4-b240-b52776b00934.jpg"
+import pos3 from "../assets/pos/4d237db7-9879-4bac-854d-fa894c9eaffe.jpg"
+import pos4 from "../assets/pos/9e2ba5db-d312-4519-a3e8-436b9fec0086.jpg"
+import pos5 from "../assets/pos/46e504c4-8c25-49db-822e-13e395343d41.jpg"
+import pos6 from "../assets/pos/cdbb0a5f-0f08-47cc-827c-7876f49e3834.jpg"
+import pos7 from "../assets/pos/921681f8-af7f-45e7-9276-01702eb49aa4.jpg"
+import pos8 from "../assets/pos/a81bda9b-8e2a-43b9-93d0-f21424d90d4e.jpg"
 
 
 

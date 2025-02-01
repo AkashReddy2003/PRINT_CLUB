@@ -28,7 +28,7 @@ export default function Products() {
   const [tags,setTags]=useState([]);
   const [tagslist,setTagslist]=useState([]);
   const [open, setOpen] = React.useState(false);
-  
+  const [searchTerm, setSearchTerm] = useState("");
   let collectionlist=[
     "Movies & Series",
     "Sports",
@@ -96,7 +96,8 @@ export default function Products() {
                       <FormLabel style={{ color: "#FFF8E8" }}>Tags</FormLabel>
                       <Select placeholder={tags.length!=0?tags:"All"} style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8"}} onChange={(event, newValue) => {
                         setTags(newValue)
-                      }} multiple>
+                      }} multiple inputValue={searchTerm}
+                      onInputChange={(event, value) => setSearchTerm(value)}>
                         <Option value={"All"}>All</Option>
                         
                         {tagslist.map((a)=>
