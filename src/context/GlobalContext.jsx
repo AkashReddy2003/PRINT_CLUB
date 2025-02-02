@@ -158,7 +158,7 @@ const MyContextProvider = ({ children }) => {
               </>
           )
         },{position: "top-right",
-                  autoClose: 6000,
+                  autoClose: 8000,
                   hideProgressBar: false,
                   closeOnClick: true,
                   pauseOnHover: false,
