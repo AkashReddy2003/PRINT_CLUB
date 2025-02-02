@@ -53,18 +53,22 @@ import { useNavigate } from 'react-router-dom';
 import { GloabalContext } from '../context/GlobalContext';
 import OfferText from '../components/OfferText';
 import ProductList from '../components/ProductList';
-
+import { Modal, ModalClose, Sheet, Typography } from '@mui/joy';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
 export default function HomePage() {
   const {data}=useContext(GloabalContext);
   const [d,setD]=useState([]);
+  const [open,setopen]=useState(true);
   const navigate=useNavigate();
   useEffect(()=>{
+    
     let a=data.filter((i)=>i.store=="Poster"?true:false);
     let n=a.length;
     setD([a[n-1],a[n-2],a[n-3],a[n-4],a[n-5],a[n-6],a[n-7],a[n-8]]);
+
   },[data])
   return (
     <div id='main'>
@@ -220,6 +224,7 @@ export default function HomePage() {
 
         </Grid>
       </section>
+      
     
       
       

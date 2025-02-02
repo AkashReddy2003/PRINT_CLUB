@@ -4,6 +4,7 @@ import { app } from '../config/FirebaseConfig';
 import { getDatabase,push,ref,set,onValue, query, orderByChild, equalTo, get } from "firebase/database";
 import { json } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { Typography } from '@mui/joy';
 const GloabalContext = createContext();
 
 const MyContextProvider = ({ children }) => {
@@ -141,6 +142,30 @@ const MyContextProvider = ({ children }) => {
   useEffect(()=>{
 
     getData();
+    toast.success(()=>{
+          return(
+            <>
+           
+              <Typography id="modal-desc" textColor="text.tertiary">
+              <>
+                
+            <p><strong>🎉 Special Offers - Buy More, Get More! 🎉</strong><br/><strong>Buy n, Get n-2 Free → Just add 2n-2 items to your cart{"n>=4 && n<=10"}.</strong><br/>
+            <br/>
+               
+            </p>
+            </>
+              </Typography>
+              </>
+          )
+        },{position: "top-right",
+                  autoClose: 6000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: false,
+                  draggable: true,
+                  
+                  theme: "dark",
+                  })
   },[])
   
   const [myState, setMyState] = useState('Hello from Context!');
