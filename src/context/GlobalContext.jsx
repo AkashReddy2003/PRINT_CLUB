@@ -166,6 +166,11 @@ const MyContextProvider = ({ children }) => {
                   
                   theme: "dark",
                   })
+                  if (screen.orientation) {
+                    screen.orientation.lock("portrait").catch(function(error) {
+                      console.log("Screen orientation lock failed:", error);
+                    });
+                  }
   },[])
   
   const [myState, setMyState] = useState('Hello from Context!');

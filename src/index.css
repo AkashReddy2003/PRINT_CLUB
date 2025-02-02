@@ -397,3 +397,8 @@ input:focus{
   
   
 }
+@media screen and (orientation: landscape) {
+  body {
+    transform: rotate(0deg);
+  }
+}
