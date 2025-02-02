@@ -13,9 +13,9 @@ export default function PosterFooter() {
                     <h1 className='protest-guerrilla-regular' style={{ color: "#FFF8E8", fontSize: 30, }}>Key features: </h1><br />
                     <p className='poppins-medium' style={{ color: "#FFF8E8", fontSize: 20, }}>
                         <ul>
-                            <li>‣ Weatherproof & Waterproof: Built to withstand the elements, making them durable for outdoor use.</li>
-                            <li>‣ Scratch-Resistant Glossy Finish: Vibrant colors with a sleek, glossy appearance.</li>
-                            <li>‣ Versatile Application: Adheres to various surfaces like walls, glass, metal, and wood.</li>
+                            <li>‣ Durable & High-Quality Print: Made with premium materials for long-lasting vibrancy and detail.</li>
+                            <li>‣ Scratch-Resistant Glossy Finish: Bold colors with a sleek, professional appearance.</li>
+                            <li>‣ Versatile Display Options: Perfect for framing, pinning, or hanging on walls.</li>
                         </ul>
                     </p>
                     <br /><br />
@@ -30,8 +30,8 @@ export default function PosterFooter() {
                     <h1 className='protest-guerrilla-regular' style={{ color: "#FFF8E8", fontSize: 30, }}>Materials: </h1><br />
                     <p className='poppins-medium' style={{ color: "#FFF8E8", fontSize: 20, }}>
                         <ul>
-                            <li>‣ Premium Vinyl: Durable and tear-resistant for long-lasting use.</li>
-                            <li>‣ UV Protection: Resistant to fading, even in direct sunlight.</li>
+                            <li>‣ Premium Paper: High-quality print with a smooth finish for a stunning display.</li>
+                            <li>‣ Fade-Resistant Ink: UV-protected to maintain vibrant colors even in direct sunlight.</li>
 
                         </ul>
                     </p>
@@ -63,8 +63,8 @@ export default function PosterFooter() {
                     <h1 className='protest-guerrilla-regular' style={{ color: "black", fontSize: 30, }}>Care Instructions: </h1><br />
                     <p className='poppins-medium' style={{ color: "black", fontSize: 20, width: "90%",}}>
                         <ul>
-                            <li>‣ Clean surface before applying for best results.</li>
-                            <li>‣ Stickers can be repositioned and removed without leaving residue.</li>
+                            <li>‣ Easy to Display: Can be attached to walls using tape, gum, or poster hangers.</li>
+                            <li>‣ Handle with Care: Avoid creasing or folding for the best display quality.</li>
                            
 
 

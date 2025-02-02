@@ -17,14 +17,14 @@ export default function TrackOrder() {
 
   return (
     <div style={{backgroundColor:"#FFF8E8",justifyContent:"center",minHeight: '100vh',minWidth: '100vw',}}>
-      <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
-      <FormControl style={{display:"flex",flexDirection: 'row', padding: 10,width: '50%',marginLeft: 50,}} >
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",width: "100%",}}>
+      <FormControl style={{display:"flex",flexDirection: 'row', padding: 10,width: '100%',marginLeft: 50,}} >
           
            
-          <Input className=' protest-guerrilla-regular'  style={{ backgroundColor: "#FFF8E8", color: "black" ,borderWidth: 0,borderRadius: 0,width: "50%",}} placeholder='Enter your Order Id' onChange={(e)=>setId(e.target.value)}/>
+          <Input className=' protest-guerrilla-regular'  style={{ backgroundColor: "#FFF8E8", color: "black" ,borderWidth: 0,borderRadius: 0,width: "100%",}} placeholder='Enter your Order Id' onChange={(e)=>setId(e.target.value)}/>
           <Button variant="outlined" style={{
               alignSelf: "center",
-              width: "50%",
+              width: "100%",
               margin: "0px auto",
               display: "block", // Ensures it behaves as a block-level element for centering
               borderWidth: 0,

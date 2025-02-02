@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
-import { Breadcrumbs, Chip, Grid2, IconButton } from '@mui/material';
+import { Breadcrumbs, Chip, Grid2, IconButton, TextField } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import AddIcon from '@mui/icons-material/Add';
 import "../css/productspage.css"
@@ -17,7 +17,7 @@ import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import {FormLabel,FormHelperText,Select,Option,Grid} from '@mui/joy';
 import { color } from 'framer-motion';
-
+import Autocomplete from '@mui/material/Autocomplete';
 export default function Products() {
  
   const {data}=useContext(GloabalContext);
@@ -47,16 +47,16 @@ export default function Products() {
   useEffect(()=>{
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
-      let a=data.filter((i)=>(((i.collection==collection||collection==""||collection=="All")&&(i.store==store||store==""||store=="All")&&(i.tags.some(x=>tags.includes(x))||tags.length==0||tags.includes("All")))?true:false));
+      let a=data.filter((i)=>(((i.collection==collection||collection==""||collection=="All")&&(i.store==store||store==""||store=="All")&&(i.tags.includes(searchTerm)||searchTerm==""||searchTerm==null)&&(i.tags.some(x=>tags.includes(x))||tags.length==0||tags.includes("All")))?true:false));
       let x=[];
       data.map((i)=>{i.tags.map((it)=>(!x.includes(it)&&(i.store==store||store==""||store=="All")&&(i.collection==collection||collection==""||collection=="All"))?x.push(it):"")});
       setTagslist(x.sort());
-      setData(a);
+      setData(a.reverse());
       
     
    
     
-  },[data,collection,store,tags])
+  },[data,collection,store,tags,searchTerm])
   
 
   return (
@@ -109,7 +109,28 @@ export default function Products() {
 
                       </Select>
                     </FormControl>
+                    
      </div>
+     <FormControl style={{ padding: 10,width:"100vw" ,alignSelf: 'center',}}>
+                      <FormLabel style={{ color: "#FFF8E8",marginLeft: window.screen.width>800?40:0, }}>Search</FormLabel>
+                      <Autocomplete
+                      
+                      onChange={(event, newValue) => {
+                        console.log(newValue);
+                        
+                        setSearchTerm(newValue)
+                        
+                      }}
+      disablePortal
+      style={{backgroundColor: "black", color: "#FFF8E8" ,borderWidth: 2,borderRadius: 0,borderColor:"#FFF8E8",color:"#FFF8E8",width: "93vw",alignSelf:"center"}}
+      options={tagslist}
+      sx={{ width: 300 }}
+      renderInput={(params) => <TextField  {...params} variant='outlined' sx={{ 
+    input: { color: "#FFF8E8" } // Changes input text color
+  }}  value={searchTerm} />}
+    />
+                      
+                    </FormControl>
      
      
     <ProductList data={Data}/>

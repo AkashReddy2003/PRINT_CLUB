@@ -121,27 +121,27 @@ export default function ProductPage() {
         </AccordionSummary>
         <AccordionDetails style={{backgroundColor: "black",color:"#FFF8E8",paddingLeft: 50,}}>
           <Typography>
-          <h1 className='poppins-medium'>Premium Vinyl Stickers</h1><br/>
+          <h1 className='poppins-medium'>Premium Non-Adhesive Posters</h1><br/>
 
-<p className='poppins-medium'>Unleash creativity with our high-quality vinyl stickers! Each design is printed on durable, glossy vinyl paper, making them perfect for customizing your laptops, water bottles, cars, notebooks, and more. 
+<p className='poppins-medium'>Elevate your space with our high-quality non-adhesive posters! Printed on durable, premium paper with a smooth finish, these posters are perfect for decorating your walls, framing, or displaying in any setting.
 <br/>
 <br/>
 Here's why you'll love them:
 <br/>
 <br/>
-<span style={{fontWeight: 'bold',}}>Waterproof & Weatherproof:</span> These stickers are made to last, no matter where you stick them. They're UV-resistant and withstand rain, sunlight, and outdoor conditions without fading.
+<span style={{fontWeight: 'bold',}}>High-Quality Print:</span>  Crisp details and vibrant colors bring each design to life.
 <br/>
 <br/>
-<span style={{fontWeight: 'bold',}}>Easy to Apply & Remove:</span> Peel and stick with ease! Our stickers are designed for a smooth application on most surfaces and can be removed without leaving residue.
+<span style={{fontWeight: 'bold',}}>Fade-Resistant:</span>  UV-protected ink ensures long-lasting vibrancy, even in direct sunlight.
 <br/>
 <br/>
-<span style={{fontWeight: 'bold',}}>Vibrant Colors:</span> Our stickers are printed with top-notch clarity and vivid colors, ensuring your designs pop and look stunning wherever you place them.
+<span style={{fontWeight: 'bold',}}>Easy to Display:</span>  Frame them, pin them, or use tape or gum for a hassle-free setup.
 <br/>
 <br/>
-<span style={{fontWeight: 'bold',}}>Customizable:</span> Personalize any surface with our wide selection of sticker designs, from bold graphics to subtle aesthetics, and everything in between.
+<span style={{fontWeight: 'bold',}}>Versatile Designs:</span>  From bold graphics to minimal aesthetics, find the perfect poster to match your style.
 <br/>
 <br/>
-Transform your everyday items into unique expressions of style with these durable, eye-catching vinyl stickers!</p>
+Transform your walls with stunning artwork that makes a statement.</p>
           </Typography>
         </AccordionDetails>
       </Accordion>
